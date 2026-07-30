@@ -40,10 +40,18 @@ SINONIMOS = {
     "hígado": "higado",
     "milanesas": "milanesa",
     "salchichas": "salchicha",
-    "arvejas": "arveja"
+    "arvejas": "arveja",
+    "maíz": "choclo",
+    "frutillas": "frutilla",
+    "nueces": "nuez",
+    "manzanas": "manzana",
+    "almendras": "almendra",
+    "mantequilla": "manteca",
+    "bananas": "banana",
+    "garbanzos": "garbanzo"
 }
 
-# 2. BASE DE DATOS CON LAS RECETAS COMPLETAS (Sin perejil en claves)
+# 2. BASE DE DATOS CON LAS RECETAS COMPLETAS
 RECETAS = [
     {
         "titulo": "Pastel de Papa con Aceitunas",
@@ -381,19 +389,188 @@ RECETAS = [
 3. Cuando la carne esté cocinada, incorporar el puré de tomate.
 4. En una olla hervir agua y cocinar los fideos a gusto.
 5. Colar los fideos, servir y agregar la salsa."""
+    },
+    {
+        "titulo": "Tarta souflee de choclo",
+        "ingredientes_clave": ["choclo", "huevo", "crema de leche", "queso", "tapa de tarta"],
+        "texto_ingredientes": """- 2 latas de maíz cremoso amarillo
+- 5 huevos
+- 1 pote chico de crema
+- 2 sobres queso rallado
+- 5 fetas de queso de barra cortado en tiritas
+- 1 sobre masa de tarta""",
+        "pasos": """1. En un bol poner 2 latas de choclo 5 huevos y un pote de crema. Mixar todo quedará una crema
+2. Agregaremos el queso rallado y 5 fetas de queso de barra cortado en tiritas mezclar todo
+3. Enmantecar y forrar un molde de tarta con una de las hojas de masa volcar el relleno y tapar con la otra hoja de masa apretando los bordes para cerrar bien
+4. Recortar los excedentes de la masa y llevar a horno hasta dorar."""
+    },
+    {
+        "titulo": "Tarta de mermelada de frutilla y crumble",
+        "ingredientes_clave": ["harina", "huevo", "azucar", "mermelada", "nuez", "manteca"],
+        "texto_ingredientes": """Masa:
+- 2 tazas harina leudante
+- Ralladura limón o naranja y Esencia de vainilla
+- 2 huevos
+- 75 cc aceite
+- 150 grs azúcar
+- 1 pote de mermelada sabor a gusto (use frutilla)
+- 50 grs nueces
+Crumble:
+- 100 grs harina
+- 100 azúcar
+- 80 grs manteca""",
+        "pasos": """1. Para la masa vamos poner en un bols huevos azúcar ralladura esencia y aceite mezclamos y le vamos incorporando la harina integramos hasta formar un bollo
+2. En un molde rectangular o de tarta estiramos la masa, encima le untamos la mermelada elegida, encima le espolvoreamos las nueces
+3. Para el crumble hacemos un arenado con la manteca fría el azúcar y la harina y lo esparcimos sobre el dulce
+4. Cocinamos en un horno moderado de 25 a 30 minutos."""
+    },
+    {
+        "titulo": "Tarta de Manzana invertida",
+        "ingredientes_clave": ["azucar", "manzana", "huevo", "leche", "harina"],
+        "texto_ingredientes": """Caramelo:
+- 3/4 taza Azúcar
+- 2 manzanas grandes
+Mezcla:
+- 2 huevos
+- 1 taza azúcar
+- 1/2 taza aceite
+- 1 taza leche
+- 1 cucharadita Esencia de vainilla
+- Ralladura de 1 limón
+- 3 tazas harina leudante""",
+        "pasos": """1. Enmantecar y enharinar el molde, poner azúcar, poner las manzanas y reservar. En un bol mezclar los huevos con el azúcar.
+2. Agregar el aceite, mezclar, luego integrar la leche, esencia, ralladura.
+3. Agregar la harina tamizada, mezclar. Agregar la mezcla al molde.
+4. Cocinar en horno a 180° por 45 minutos aproximadamente.
+5. Desmoldar en caliente para que no se pegue el caramelo."""
+    },
+    {
+        "titulo": "Tarta salada de remolacha y queso cottage",
+        "ingredientes_clave": ["almendra", "manteca", "huevo", "cebolla", "ajo", "remolacha", "queso cottage", "queso"],
+        "texto_ingredientes": """Masa:
+- 150 g almendras molidas
+- 30 g ghee casero o manteca
+- 1 huevo
+Relleno:
+- 1 cda aceite de oliva
+- 1 cebolla mediana
+- 2 dientes ajo
+- 3 huevos
+- 3 (o 4) remolachas ya cocidas
+- 3 cdas soperas colmadas de queso cottage
+- 1 feta queso protein (aprox. 70 gramos)""",
+        "pasos": """1. Mezclar ingredientes de la masa. Extender sobre asadera. Pinchar con tenedor. Llevar a horno medio 15 a 20 minutos.
+2. Sofreír la cebolla y ajos. Picar las remolachas y agregarlas.
+3. Batir los huevos con el cottage. Condimentar. Agregar el rehogado y mezclar. Agregar queso.
+4. Agregar el relleno a la base y llevar nuevamente al horno, hasta dorar."""
+    },
+    {
+        "titulo": "Tarta Invertida de Banana",
+        "ingredientes_clave": ["huevo", "azucar", "banana", "harina"],
+        "texto_ingredientes": """- 2 huevos
+- 1/2 taza Azúcar
+- 2 bananas
+- 1/2 taza aceite
+- 1 cucharadita Esencia de vainilla
+- 1/2 taza Harina leudante
+Caramelo:
+- 1/2 taza Azúcar""",
+        "pasos": """1. Caramelo: hacer el caramelo en sartén. Poner en fuente y arriba rodajas de banana.
+2. Mezclar huevos y azúcar. Incorporar aceite y esencia.
+3. Incorporar harina tamizada. (Si queda denso agregar leche).
+4. Poner mezcla en molde y hornear a baño maría 120° por 55 minutos (o horno convencional).
+5. Desmoldar en caliente."""
+    },
+    {
+        "titulo": "Tarta de cebolla con masa de garbanzos",
+        "ingredientes_clave": ["garbanzo", "harina", "cebolla", "huevo", "queso", "leche"],
+        "texto_ingredientes": """Masa:
+- 1 lata de garbanzos (o 200 grs cocidos)
+- 3 cds aceite
+- 4 cds aproximadamente harina
+Relleno:
+- 3 cebebollas
+- 3 huevos
+- 100 grs queso rallado
+- 200 grs queso cremoso o mozzarella
+- 4 cdas harina
+- 100 cc leche""",
+        "pasos": """1. Masa: mixear garbanzos con aceite y condimentos. Incorporar harina hasta formar masa.
+2. Cortar cebolla en Juliana y rehogar.
+3. En bol mezclar huevos, leche, harina. Agregar cebolla y quesos.
+4. Forrar molde con la masa, volcar relleno y espolvorear queso. Cocinar en horno fuerte."""
+    },
+    {
+        "titulo": "Relleno tarta de acelga",
+        "ingredientes_clave": ["acelga", "morron", "cebolla", "queso crema", "huevo", "queso"],
+        "texto_ingredientes": """- 3 huevos
+- 1 cebolla
+- 1/3 morrón rojo
+- 3 paquetes acelga
+- 3 cucharadas queso crema
+- queso mantecoso
+- ajo en polvo, pimentón dulce, ají molido, sal""",
+        "pasos": """1. Hervir la acelga, escurrir bien y cortar.
+2. Cortar bien chiquito el morrón y la cebolla y saltear hasta que estén cocidos.
+3. Juntar la acelga con las verduras en un bol y añadir el queso crema.
+4. Mezclar los huevos con los condimentos e incorporar al bol, agregar queso mantecoso."""
+    },
+    {
+        "titulo": "Tarta toffee",
+        "ingredientes_clave": ["crema de leche", "chocolate", "dulce de leche", "masa sable"],
+        "texto_ingredientes": """- 139 g Crema de Leche
+- 139 g Choco para derretir
+- 400 g Dulce de Leche Repostero
+- Masa sable""",
+        "pasos": """1. Ganache: picar el chocolate. Calentar la crema hasta ebullición, volcar sobre el chocolate y reposar 4 min. Revolver hasta integrar.
+2. Rellenar la masa sable con dulce de leche.
+3. Volcar el ganache tibio sobre el dulce de leche. Dejar enfriar."""
+    },
+    {
+        "titulo": "Masa para tartas (Sin Gluten)",
+        "ingredientes_clave": ["premezcla sin gluten", "huevo", "leche"],
+        "texto_ingredientes": """- 3 tazas premezcla sin gluten (o mezcla casera)
+- 1 huevo
+- 50 cc aceite
+- 1 cdita sal, 1 cdita polvo de hornear
+- Leche o agua c/n""",
+        "pasos": """1. Mezclar ingredientes secos, agregar huevo y líquido de a poco hasta masa lisa.
+2. Enmantecar y espolvorear asadera.
+3. Estirar masa espolvoreando premezcla.
+4. Cocinar en fuego intermedio con relleno a gusto."""
+    },
+    {
+        "titulo": "Tarta de Atún",
+        "ingredientes_clave": ["cebolla", "huevo", "ajo", "atun", "queso crema", "tapa de tarta", "queso"],
+        "texto_ingredientes": """- 1 Masa de Tarta doble
+- 2 Latas de Atún
+- 2 Cebollas grandes
+- 2 Dientes Ajo
+- 2 Huevos
+- 3 Cucharadas Queso Crema o Crema de Leche
+- 200 gr Queso cremoso
+- Condimentos a gusto""",
+        "pasos": """1. Caramelizar cebolla en juliana. Hervir 1 huevo.
+2. Agregar ajo picado a la cebolla y cocinar 4 min.
+3. Agregar Atún y queso crema, condimentar. Retirar del fuego.
+4. Agregar el huevo duro picado y el huevo crudo, mezclar.
+5. Acomodar masa en fuente, esparcir relleno, poner queso cremoso y cerrar con la otra tapa.
+6. Cocinar 35 min."""
     }
 ]
 
-# 3. LÓGICA DE BÚSQUEDA (Actualizada para hasta 2 faltantes)
+# 2. GENERACIÓN AUTOMÁTICA DE LA LISTA DE INGREDIENTES PARA EL MENÚ
+ingredientes_unicos = set()
+for receta in RECETAS:
+    for ingrediente in receta["ingredientes_clave"]:
+        ingredientes_unicos.add(ingrediente)
+
+# Ordenamos alfabéticamente para que sea fácil de buscar
+LISTA_INGREDIENTES_UI = sorted(list(ingredientes_unicos))
+
+# 3. LÓGICA DE BÚSQUEDA
 def buscar_recetas(ingredientes_usuario):
-    lista_cruda = [i.strip().lower() for i in ingredientes_usuario.split(",")]
-    
-    lista_normalizada = []
-    for ing in lista_cruda:
-        ing_corregido = SINONIMOS.get(ing, ing)
-        lista_normalizada.append(ing_corregido)
-        
-    set_usuario = set(lista_normalizada)
+    set_usuario = set(ingredientes_usuario)
     
     exactas = []
     casi_listas = []
@@ -401,13 +578,17 @@ def buscar_recetas(ingredientes_usuario):
     for receta in RECETAS:
         set_receta = set(receta["ingredientes_clave"])
         
+        # REGLA ESTRICTA: La receta DEBE tener al menos un ingrediente de los que seleccionaste.
+        # Si la intersección es 0 (no hay coincidencias), la saltea automáticamente.
+        if not set_receta.intersection(set_usuario):
+            continue
+
         faltantes = set_receta - set_usuario
         cantidad_faltantes = len(faltantes)
         
         if cantidad_faltantes == 0:
             exactas.append(receta)
         elif cantidad_faltantes <= 2:
-            # Si le faltan 1 o 2 ingredientes, los guardamos juntos
             receta_con_faltantes = receta.copy()
             receta_con_faltantes["ingredientes_faltantes"] = list(faltantes)
             casi_listas.append(receta_con_faltantes)
@@ -418,11 +599,13 @@ def buscar_recetas(ingredientes_usuario):
 st.set_page_config(page_title="¿Qué cocino hoy?", page_icon="🍳")
 
 st.title("🍳 ¿Qué cocino hoy?")
-st.write("Escribí los ingredientes que tenés a mano.")
+st.write("Seleccioná los ingredientes que tenés en la heladera o despensa. (Asumimos que tenés sal, aceite y agua).")
 
-ingredientes_input = st.text_input(
-    "Tus ingredientes (separados por coma):", 
-    placeholder="ej: papa, huevo, fideo, milanesa"
+# MENÚ DESPLEGABLE
+ingredientes_input = st.multiselect(
+    "Tus ingredientes:", 
+    options=LISTA_INGREDIENTES_UI,
+    placeholder="Hacé clic acá para elegir o buscar ingredientes..."
 )
 
 if st.button("Buscar Recetas"):
@@ -440,12 +623,9 @@ if st.button("Buscar Recetas"):
                     st.markdown("**Paso a paso:**")
                     st.text(r["pasos"])
                 st.divider()
-        else:
-            if not casi_listas:
-                st.error("No encontramos nada exacto con esos ingredientes.")
         
         if casi_listas:
-            st.info("Te faltan unos ingredientes para estas recetas: 🛒")
+            st.info("Te faltan hasta 2 ingredientes para estas recetas: 🛒")
             for r in casi_listas:
                 st.subheader(r["titulo"])
                 faltantes_str = ", ".join(r["ingredientes_faltantes"])
@@ -459,7 +639,7 @@ if st.button("Buscar Recetas"):
                 st.divider()
                 
         if not exactas and not casi_listas:
-            st.warning("No hay coincidencias cercanas. ¡Probá agregando más ingredientes!")
+            st.warning("No encontramos recetas que coincidan con lo que elegiste. ¡Probá seleccionando algo más!")
             
     else:
-        st.error("Por favor, ingresá al menos un ingrediente.")
+        st.error("Por favor, seleccioná al menos un ingrediente del menú.")
