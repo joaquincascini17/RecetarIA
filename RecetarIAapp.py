@@ -16,6 +16,7 @@ SINONIMOS = {
     "ajies": "morron",
     "limones": "limon",
     "quesos": "queso",
+    "mozzarella": "queso",
     "zapallitos": "zapallito",
     "calabaza": "zapallo",
     "zapallos": "zapallo",
@@ -24,8 +25,11 @@ SINONIMOS = {
     "arroses": "arroz",
     "ajos": "ajo",
     "galletita": "galletitas",
+    "chocolinas": "galletitas",
+    "vainillas": "galletitas",
     "puerros": "puerro",
     "verdeos": "verdeo",
+    "cebollita de verdeo": "verdeo",
     "crema": "crema de leche",
     "suprema": "pollo",
     "supremas": "pollo",
@@ -48,7 +52,10 @@ SINONIMOS = {
     "almendras": "almendra",
     "mantequilla": "manteca",
     "bananas": "banana",
-    "garbanzos": "garbanzo"
+    "garbanzos": "garbanzo",
+    "espinacas": "espinaca",
+    "pascualina": "tapa de tarta",
+    "masa de tarta": "tapa de tarta"
 }
 
 # 2. BASE DE DATOS CON LAS RECETAS COMPLETAS
@@ -446,7 +453,7 @@ Mezcla:
     },
     {
         "titulo": "Tarta salada de remolacha y queso cottage",
-        "ingredientes_clave": ["almendra", "manteca", "huevo", "cebolla", "ajo", "remolacha", "queso cottage", "queso"],
+        "ingredientes_clave": ["almendra", "manteca", "huevo", "cebolla", "ajo", "remolacha", "queso crema", "queso"],
         "texto_ingredientes": """Masa:
 - 150 g almendras molidas
 - 30 g ghee casero o manteca
@@ -556,19 +563,309 @@ Relleno:
 4. Agregar el huevo duro picado y el huevo crudo, mezclar.
 5. Acomodar masa en fuente, esparcir relleno, poner queso cremoso y cerrar con la otra tapa.
 6. Cocinar 35 min."""
+    },
+    {
+        "titulo": "Tarta de brócoli y espinaca con mozzarella",
+        "ingredientes_clave": ["brocoli", "espinaca", "verdeo", "huevo", "queso", "queso crema", "tapa de tarta"],
+        "texto_ingredientes": """- 1 brócoli mediano
+- 200 g espinaca fresca
+- 4 cebollitas de verdeo
+- 3 huevos grandes
+- 125 g mozzarella rallada
+- 100 g queso crema
+- 1 masa para tarta""",
+        "pasos": """1. Precalentá el horno a 200 °C.
+2. Herví ramitos de brócoli por 5 min.
+3. Incorporá espinaca y cebollita el último minuto.
+4. Escurrí bien las verduras.
+5. Mezclá verduras, huevos, mozzarella, queso crema y sal.
+6. Forrá una tartera con la masa.
+7. Volcá el relleno.
+8. Repulgá los bordes y horneá 35-40 min."""
+    },
+    {
+        "titulo": "Tarta de Atún con Base de Puré de Papa",
+        "ingredientes_clave": ["papa", "morron", "cebolla", "tomate", "ajo", "atun", "aceituna", "huevo"],
+        "texto_ingredientes": """- 6 Papas
+- 1 Pimiento rojo
+- 1 Cebolla, 1 Tomate, 1 Diente Ajo
+- 2 Latas de Atún
+- 100 grs Aceitunas verdes
+- 4 Huevos
+- Condimentos a gusto""",
+        "pasos": """1. Hervir las papas con piel.
+2. Pelar y aplastar dentro de un molde aceitado.
+3. Hornear a 180° por 10 min.
+4. Hervir 4 huevos, pelar y cortar en rodajas.
+5. Sofreír cebolla, pimiento y ajo. Agregar atún, tomate, aceitunas y condimentos.
+6. Colocar la mitad del relleno sobre la base, agregar huevos y terminar con el resto.
+7. Hornear hasta dorar."""
+    },
+    {
+        "titulo": "Tarta básica de jamón, queso y tomate",
+        "ingredientes_clave": ["tapa de tarta", "jamon", "queso", "tomate", "huevo"],
+        "texto_ingredientes": """- 1 tapa de pascualina
+- jamón cocido
+- queso fresco y rallado
+- 2 tomates peritas chicos
+- 2 huevos""",
+        "pasos": """1. Cortar jamón.
+2. Agregar queso en trocitos, tomate y huevos.
+3. Sumar queso rallado.
+4. Poner masa en asadera, volcar relleno y hacer repulgue.
+5. Cocinar en horno hasta dorar."""
+    },
+    {
+        "titulo": "Tarta de coco y dulce de leche",
+        "ingredientes_clave": ["huevo", "azucar", "manteca", "harina", "dulce de leche", "coco"],
+        "texto_ingredientes": """- 400 gramos dulce de leche
+- 30 gramos manteca
+- 80 gramos coco
+- 250 gramos harina leudante
+- 3 huevos
+- 75 gramos azúcar""",
+        "pasos": """1. Batir 1 huevo con azúcar. Incorporar manteca y harina leudante. Enfriar masa 20 min.
+2. Estirar masa en molde y hornear a 180 °C por 20 min.
+3. Cubrir base con dulce de leche.
+4. Mezclar coco con 2 huevos, distribuir encima y hornear hasta dorar."""
+    },
+    {
+        "titulo": "Tarta de hojas de remolacha y salsa blanca",
+        "ingredientes_clave": ["tapa de tarta", "remolacha", "zanahoria", "cebolla", "morron", "huevo", "maicena", "leche", "queso"],
+        "texto_ingredientes": """- 1 masa de tarta
+- 1 atado de remolacha (las hojas)
+- 2 zanahorias, 1 cebolla, 1/2 morrón
+- 3 huevos duros
+- Salsa blanca: 500 ml leche (o agua y leche en polvo), 2 cdas maicena
+- Queso para derretir""",
+        "pasos": """1. Hervir los huevos. Precocinar masa 5 min.
+2. Lavar vegetales. Picar hojas y pencas de remolacha y cocinar al vapor.
+3. Saltear cebolla, morrón y zanahoria rallada.
+4. Combinar salsa blanca y salteado.
+5. Poner huevo picado sobre la base, arriba el relleno y queso.
+6. Cocinar hasta dorar."""
+    },
+    {
+        "titulo": "Palmeritas con tapa de tarta",
+        "ingredientes_clave": ["tapa de tarta", "manteca", "azucar"],
+        "texto_ingredientes": """- 1 paquete tapa de tarta de hojaldre
+- 50 gramos manteca
+- 3 cucharadas azúcar""",
+        "pasos": """1. Ablandar manteca y batir con azúcar.
+2. Untar la mezcla en las tapas de tarta.
+3. Enrollar de cada extremo y cortar.
+4. Hornear 8-10 min de cada lado hasta dorar."""
+    },
+    {
+        "titulo": "Tarta de Verdura con Masa Casera",
+        "ingredientes_clave": ["harina", "zapallo", "zanahoria", "huevo", "acelga", "cebolla", "morron", "queso"],
+        "texto_ingredientes": """Masa:
+- 250g harina 000
+- 65 cc Aceite, 100 cc agua caliente
+Relleno:
+- 1/2 zapallo, 2 zanahorias
+- 3 huevos
+- 1 paquete acelga
+- 2 Cebollas, 1 morrón
+- Queso cremoso""",
+        "pasos": """1. Unir harina, aceite, sal y agua caliente. Enfriar masa.
+2. Hervir zapallo y zanahoria. Hervir huevos.
+3. Rehogar cebolla, morrón y acelga.
+4. Unir ingredientes del relleno.
+5. Estirar masa en tartera. Rellenar y tapar. Pincelar con yema y hornear 30/40 min."""
+    },
+    {
+        "titulo": "Flan Caserito",
+        "ingredientes_clave": ["leche", "huevo", "azucar"],
+        "texto_ingredientes": """- 500 ml Leche
+- 4 huevos
+- 1/2 Taza azúcar
+- Esencia de vainilla
+- Azúcar para caramelo""",
+        "pasos": """1. Preparar caramelo en el molde.
+2. Batir huevos, azúcar, vainilla y sal. Incorporar leche.
+3. Verter mezcla en el molde.
+4. Cocinar a baño María en horno a 170°.
+5. Enfriar y desmoldar."""
+    },
+    {
+        "titulo": "Gelatina sabor tiramisú",
+        "ingredientes_clave": ["leche", "yogurt", "gelatina", "cafe", "stevia"],
+        "texto_ingredientes": """- 500 ml leche descremada
+- 300 gr yogurt natural
+- 14 g gelatina sin sabor
+- 2 cucharadas café
+- 2 cucharadas stevia""",
+        "pasos": """1. Calentar leche, stevia, gelatina, 200g de yogurt y café revolviendo a fuego bajo.
+2. Pasar a vasitos y enfriar toda la noche en heladera.
+3. Coronar con el resto del yogurt y cacao."""
+    },
+    {
+        "titulo": "Arroz con leche",
+        "ingredientes_clave": ["leche", "arroz", "azucar"],
+        "texto_ingredientes": """- 1 litro leche
+- 12 cucharadas colmadas arroz
+- 6 cucharadas colmadas azúcar""",
+        "pasos": """1. Entibiar leche.
+2. Incorporar arroz a fuego intermedio.
+3. Colocar azúcar y mezclar hasta que esté listo el arroz."""
+    },
+    {
+        "titulo": "Cheesecake de queso y dulce",
+        "ingredientes_clave": ["galletitas", "manteca", "queso crema", "crema de leche", "huevo", "azucar", "membrillo"],
+        "texto_ingredientes": """Base:
+- 300 gr galletas lincoln
+- 50 cc manteca
+Cheesecake:
+- 250 gr Queso crema
+- 100 cc Crema de leche
+- 4 Huevos, 75 gr Azúcar
+- 250 gr Dulce de membrillo""",
+        "pasos": """1. Triturar galletas con manteca. Cubrir molde y hornear 10 min.
+2. Batir crema, queso crema, huevos y azúcar.
+3. Ablandar membrillo con agua y colocar en el fondo de la tarta.
+4. Sumar mezcla de cheesecake y hornear a 160° por 45 min."""
+    },
+    {
+        "titulo": "Globi, postre de la Antigua Roma",
+        "ingredientes_clave": ["ricota", "harina", "miel", "semillas"],
+        "texto_ingredientes": """- 500 g Ricota
+- 120 g Harina de trigo
+- Aceite de oliva (para freír)
+- Miel líquida
+- Semillas de sésamo o amapola""",
+        "pasos": """1. Escurrir ricota y mezclar con harina formando una masa. Formar bolitas.
+2. Freír en aceite de oliva hasta dorar.
+3. Servir tibias bañadas con miel y semillas."""
+    },
+    {
+        "titulo": "Torta Tres Leches",
+        "ingredientes_clave": ["huevo", "azucar", "harina", "leche", "crema de leche", "dulce de leche"],
+        "texto_ingredientes": """- 2 huevos, 60 g azúcar, 60 g harina
+Para embeber:
+- 100 g leche en polvo (o normal)
+- 100 g crema de leche
+- 250 cc leche entera
+Cubierta:
+- Crema Chantilly
+- Dulce de leche""",
+        "pasos": """1. Batir huevos con azúcar a punto letra. Agregar harina.
+2. Volcar en molde y hornear a 160° por 12-15 min.
+3. Mezclar las leches y crema.
+4. Pinchar el bizcochuelo y volcar el líquido. Enfriar.
+5. Cubrir con Chantilly y dulce de leche."""
+    },
+    {
+        "titulo": "Budín de pan",
+        "ingredientes_clave": ["leche", "pan", "huevo", "azucar"],
+        "texto_ingredientes": """- 1 litro leche
+- 500 g pan duro
+- 5 o 6 huevos
+- 1 taza azúcar
+- Vainilla y ralladura de limón/naranja
+- Caramelo: 1.5 taza azúcar""",
+        "pasos": """1. Remojar pan en leche.
+2. Preparar caramelo y bañar el molde.
+3. Desintegrar el pan remojado. Batir huevos, azúcar, esencias y mezclar con el pan.
+4. Volcar en el molde y hornear a baño María por 1 hora.
+5. Enfriar y desmoldar."""
+    },
+    {
+        "titulo": "Crema Chantilly",
+        "ingredientes_clave": ["crema de leche", "azucar"],
+        "texto_ingredientes": """- 200 ml crema de leche (35% grasa)
+- 1 o 2 cdas azúcar impalpable
+- Vainilla""",
+        "pasos": """1. Crema, varillas y bol bien fríos.
+2. Batir crema a velocidad media, agregar azúcar y vainilla.
+3. Batir hasta picos firmes."""
+    },
+    {
+        "titulo": "Dulce de leche desde lata",
+        "ingredientes_clave": ["leche condensada"],
+        "texto_ingredientes": """- 2 latas leche condensada
+- Agua abundante""",
+        "pasos": """1. Retirar etiquetas de las latas.
+2. Hervir sumergidas en agua por 2 o 3 horas. (No dejar que se queden sin agua).
+3. Apagar fuego y dejar enfriar en la cacerola de un día para otro."""
+    },
+    {
+        "titulo": "Postre estilo Serenito de dulce de leche",
+        "ingredientes_clave": ["leche", "azucar", "maicena", "dulce de leche"],
+        "texto_ingredientes": """- 500 ml leche
+- 2 cdas azúcar
+- 2 cdas maicena
+- 4 cdas dulce de leche
+- Vainilla""",
+        "pasos": """1. Separar mitad de leche y mezclar con azúcar y maicena sin grumos.
+2. Hervir la otra mitad de la leche.
+3. Unir ambas leches a fuego mínimo sin dejar de batir.
+4. Al hervir agregar dulce de leche y espesar.
+5. Servir en vasos, tapar con film al contacto y enfriar."""
+    },
+    {
+        "titulo": "Mousse de limón casera",
+        "ingredientes_clave": ["huevo", "azucar", "leche", "maicena", "limon"],
+        "texto_ingredientes": """- 3 Huevos (separar claras y yemas)
+- 80 g Azúcar
+- 200 ml Leche
+- 20 g Maicena
+- Jugo y ralladura de 2 limones""",
+        "pasos": """1. Mezclar yemas, maicena y un poco de leche.
+2. Calentar resto de leche con mitad del azúcar.
+3. Agregar yemas y cocinar revolviendo hasta espesar.
+4. Agregar jugo y ralladura. Enfriar.
+5. Batir claras a nieve con el resto del azúcar.
+6. Incorporar merengue a la crema con movimientos envolventes. Refrigerar."""
+    },
+    {
+        "titulo": "Chocotorta Helada",
+        "ingredientes_clave": ["queso crema", "helado", "galletitas", "leche"],
+        "texto_ingredientes": """- 1 pote helado de dulce de leche
+- 200 g queso untable
+- 1 pote helado de chocolate
+- 340 g chocolinas (galletas de chocolate)
+- 100 ml leche""",
+        "pasos": """1. Mezclar queso untable con helado de dulce de leche y enfriar.
+2. Armar capas: helado de chocolate, galletitas mojadas en leche, helado de chocolate. Enfriar 15 min.
+3. Agregar capa de la mezcla de dulce de leche y queso. Enfriar 15 min.
+4. Repetir capas y enfriar por 3 horas mínimo."""
+    },
+    {
+        "titulo": "Peras al vino tinto",
+        "ingredientes_clave": ["pera", "vino", "azucar"],
+        "texto_ingredientes": """- 8 peras
+- 1 lt vino tinto
+- 10 cdas azúcar
+- 1 cdta canela""",
+        "pasos": """1. Pelar peras y poner en cacerola con vino, azúcar y canela.
+2. Hervir destapado. Luego tapar y cocinar 30 min girándolas.
+3. Retirar peras y reducir la salsa a caramelo. Enfriar."""
+    },
+    {
+        "titulo": "Postre de vainillas y limón",
+        "ingredientes_clave": ["crema de leche", "leche condensada", "limon", "galletitas", "leche"],
+        "texto_ingredientes": """- 24 vainillas
+- Leche c/n
+- 1 pote leche condensada
+- 1 pote crema
+- Jugo y ralladura de 2 limones""",
+        "pasos": """1. Batir crema a medio punto, agregar leche condensada, jugo y ralladura de limón.
+2. Remojar vainillas en leche y hacer capas de vainillas y crema en una fuente.
+3. Refrigerar por tres horas."""
     }
 ]
 
-# 2. GENERACIÓN AUTOMÁTICA DE LA LISTA DE INGREDIENTES PARA EL MENÚ
+# 3. GENERACIÓN AUTOMÁTICA DE LA LISTA DE INGREDIENTES PARA EL MENÚ
 ingredientes_unicos = set()
 for receta in RECETAS:
     for ingrediente in receta["ingredientes_clave"]:
         ingredientes_unicos.add(ingrediente)
 
-# Ordenamos alfabéticamente para que sea fácil de buscar
+# Ordenamos alfabéticamente para que sea fácil de buscar en la app
 LISTA_INGREDIENTES_UI = sorted(list(ingredientes_unicos))
 
-# 3. LÓGICA DE BÚSQUEDA
+# 4. LÓGICA DE BÚSQUEDA
 def buscar_recetas(ingredientes_usuario):
     set_usuario = set(ingredientes_usuario)
     
@@ -579,7 +876,6 @@ def buscar_recetas(ingredientes_usuario):
         set_receta = set(receta["ingredientes_clave"])
         
         # REGLA ESTRICTA: La receta DEBE tener al menos un ingrediente de los que seleccionaste.
-        # Si la intersección es 0 (no hay coincidencias), la saltea automáticamente.
         if not set_receta.intersection(set_usuario):
             continue
 
@@ -595,7 +891,7 @@ def buscar_recetas(ingredientes_usuario):
 
     return exactas, casi_listas
 
-# 4. INTERFAZ DE USUARIO
+# 5. INTERFAZ DE USUARIO
 st.set_page_config(page_title="¿Qué cocino hoy?", page_icon="🍳")
 
 st.title("🍳 ¿Qué cocino hoy?")
