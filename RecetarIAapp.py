@@ -918,10 +918,14 @@ div.stButton > button:first-child:hover {
 }
 
 /* BOTÓN DESPLEGABLE DE RECETAS */
-.streamlit-expanderHeader {
-    color: #1E3A14 !important;
-    font-weight: bold;
-    background-color: #FDFBF5 !important;
+[data-testid="stExpander"] summary,
+[data-testid="stExpander"] summary * {
+    color: #1E3A14 !important; /* <--- Fuerza el verde oscuro en las letras y la flechita */
+    font-weight: bold !important;
+    background-color: #FDFBF5 !important; /* <--- Fondo crema */
+}
+
+[data-testid="stExpander"] summary {
     border: 2px solid #4F6D23 !important;
     border-radius: 6px !important;
 }
