@@ -891,8 +891,73 @@ def buscar_recetas(ingredientes_usuario):
 
     return exactas, casi_listas
 
-# 5. INTERFAZ DE USUARIO
+# 5. INTERFAZ DE USUARIO Y DISEÑO GRÁFICO
 st.set_page_config(page_title="¿Qué cocino hoy?", page_icon="🍳")
+
+# --- INICIO DE LA NUEVA GRÁFICA ---
+# Colores extraídos de tu paleta:
+# Rojo oscuro: #691410 | Rojo: #D22211 | Naranja: #DE770F | Amarillo: #FBB229 
+# Verde lima: #99A12D | Verde medio: #4F6D23 | Verde oscuro: #1E3A14
+
+st.markdown("""
+<style>
+/* Color de fondo de la app (un crema muy suave para que los colores resalten bien) */
+.stApp {
+    background-color: #FDFBF5;
+}
+
+/* Títulos principales en Verde Oscuro */
+h1, h2, h3 {
+    color: #1E3A14 !important;
+}
+
+/* Texto general un poco más oscuro para buena lectura */
+p, li, .stMarkdown {
+    color: #2F3324 !important;
+}
+
+/* Diseño del Botón Principal (Rojo brillante con efecto Rojo oscuro al pasar el mouse) */
+div.stButton > button:first-child {
+    background-color: #D22211 !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+div.stButton > button:first-child:hover {
+    background-color: #691410 !important;
+    color: white !important;
+}
+
+/* Etiquetas/Tags de los ingredientes seleccionados (Amarillo con texto Verde Oscuro) */
+span[data-baseweb="tag"] {
+    background-color: #FBB229 !important;
+    color: #1E3A14 !important;
+    font-weight: bold;
+    border: none;
+}
+
+/* Líneas separadoras (Verde lima) */
+hr {
+    border-bottom: 2px solid #99A12D !important;
+}
+
+/* Título de los botones desplegables de receta (Verde Medio) */
+.streamlit-expanderHeader {
+    color: #4F6D23 !important;
+    font-weight: bold;
+    border: 1px solid #99A12D;
+    border-radius: 5px;
+}
+
+/* Cajas de ingredientes faltantes (borde Naranja) */
+div[data-testid="stAlert"]:has(svg[aria-label="icon-info"]) {
+    border-left: 4px solid #DE770F;
+}
+</style>
+""", unsafe_allow_html=True)
+# --- FIN DE LA NUEVA GRÁFICA ---
 
 st.title("🍳 ¿Qué cocino hoy?")
 st.write("Seleccioná los ingredientes que tenés en la heladera o despensa. (Asumimos que tenés sal, aceite y agua).")
