@@ -1009,7 +1009,7 @@ div[data-testid="stExpanderDetails"] p strong {
 /* C. TEXTO DE LOS INGREDIENTES Y PASOS */
 /* Modificamos el target para que agarre bien los st.text() en Streamlit */
 div[data-testid="stExpanderDetails"] div[data-testid="stText"] {
-    color: #2F3324 !important; /* <-- Acá cambiás el color de los ingredientes */
+    color: #171a10 !important; /* <-- Acá cambiás el color de los ingredientes */
     font-family: "Helvetica", "Arial", sans-serif !important;
     font-size: 1rem !important;
     line-height: 1.6 !important;
