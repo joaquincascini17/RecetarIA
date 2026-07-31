@@ -913,7 +913,7 @@ h1, h2, h3 {
 
 /* Texto general un poco más oscuro para buena lectura */
 p, li, .stMarkdown {
-    color: #2F3324 !important;
+    color: #eeff03 !important;
 }
 
 /* Diseño del Botón Principal (Rojo brillante con efecto Rojo oscuro al pasar el mouse) */
