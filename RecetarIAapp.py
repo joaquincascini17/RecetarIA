@@ -992,7 +992,7 @@ div.stButton > button:first-child:hover {
 
 /* A. Fondo de la hoja de la receta */
 div[data-testid="stExpanderDetails"] {
-    background-color: #FFFFFF !important; /* Fondo del recuadro de la receta */
+    background-color: #FFFFFF !important; 
     border: 1px solid #99A12D !important;
     border-top: none !important;
     border-radius: 0 0 6px 6px !important;
@@ -1001,15 +1001,17 @@ div[data-testid="stExpanderDetails"] {
 
 /* B. Subtítulos ("INGREDIENTES:" y "PASO A PASO:") */
 div[data-testid="stExpanderDetails"] p strong {
-    color: #D22211 !important; /* Color de las palabras INGREDIENTES / PASOS */
+    color: #D22211 !important; 
     font-size: 1.1rem;
     text-transform: uppercase;
 }
 
-/* C. TEXTO DE LOS INGREDIENTES Y PASOS */
-/* Modificamos el target para que agarre bien los st.text() en Streamlit */
-div[data-testid="stExpanderDetails"] div[data-testid="stText"] {
-    color: #171a10 !important; /* <-- Acá cambiás el color de los ingredientes */
+/* C. TEXTO DE LOS INGREDIENTES Y PASOS (A prueba de balas) */
+div[data-testid="stExpanderDetails"] div[data-testid="stText"],
+div[data-testid="stExpanderDetails"] pre,
+div[data-testid="stExpanderDetails"] code {
+    color: #2F3324 !important; /* <--- Color de texto (Verde oscuro casi negro) */
+    background-color: transparent !important; /* <--- Evita que Streamlit le ponga fondos raros */
     font-family: "Helvetica", "Arial", sans-serif !important;
     font-size: 1rem !important;
     line-height: 1.6 !important;
