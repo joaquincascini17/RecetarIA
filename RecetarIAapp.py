@@ -903,7 +903,7 @@ st.markdown("""
 <style>
 /* Color de fondo de la app (un crema muy suave para que los colores resalten bien) */
 .stApp {
-    background-color: #FDFBF5;
+    background-color: #f7ed8f;
 }
 
 /* Títulos principales en Verde Oscuro */
@@ -945,7 +945,7 @@ hr {
 
 /* Título de los botones desplegables de receta (Verde Medio) */
 .streamlit-expanderHeader {
-    color: #4F6D23 !important;
+    color: #edd70c !important;
     font-weight: bold;
     border: 1px solid #99A12D;
     border-radius: 5px;
@@ -960,7 +960,7 @@ div[data-testid="stAlert"]:has(svg[aria-label="icon-info"]) {
 # --- FIN DE LA NUEVA GRÁFICA ---
 
 st.title("🍳 ¿Qué cocino hoy?")
-st.write("Seleccioná los ingredientes que tenés en la heladera o despensa. (Asumimos que tenés sal, aceite y agua).")
+st.write("Seleccioná los ingredientes que tenés en la heladera o despensa.")
 
 # MENÚ DESPLEGABLE
 ingredientes_input = st.multiselect(
