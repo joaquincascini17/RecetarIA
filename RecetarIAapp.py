@@ -1,64 +1,6 @@
 import streamlit as st
 
-# 1. DICCIONARIO DE SINÓNIMOS
-SINONIMOS = {
-    "huevos": "huevo",
-    "yogur": "yogurt",
-    "yoghurt": "yogurt",
-    "papas": "papa",
-    "cebollas": "cebolla",
-    "tomates": "tomate",
-    "morrones": "morron",
-    "pimiento": "morron",
-    "pimientos": "morron",
-    "aji": "morron",
-    "ají": "morron",
-    "ajies": "morron",
-    "limones": "limon",
-    "quesos": "queso",
-    "mozzarella": "queso",
-    "zapallitos": "zapallito",
-    "calabaza": "zapallo",
-    "zapallos": "zapallo",
-    "carnes": "carne",
-    "lenteja": "lentejas",
-    "arroses": "arroz",
-    "ajos": "ajo",
-    "galletita": "galletitas",
-    "chocolinas": "galletitas",
-    "vainillas": "galletitas",
-    "puerros": "puerro",
-    "verdeos": "verdeo",
-    "cebollita de verdeo": "verdeo",
-    "crema": "crema de leche",
-    "suprema": "pollo",
-    "supremas": "pollo",
-    "pata": "pollo",
-    "patas": "pollo",
-    "muslo": "pollo",
-    "muslos": "pollo",
-    "fideos": "fideo",
-    "spaghetti": "fideo",
-    "moñito": "fideo",
-    "moñitos": "fideo",
-    "hígado": "higado",
-    "milanesas": "milanesa",
-    "salchichas": "salchicha",
-    "arvejas": "arveja",
-    "maíz": "choclo",
-    "frutillas": "frutilla",
-    "nueces": "nuez",
-    "manzanas": "manzana",
-    "almendras": "almendra",
-    "mantequilla": "manteca",
-    "bananas": "banana",
-    "garbanzos": "garbanzo",
-    "espinacas": "espinaca",
-    "pascualina": "tapa de tarta",
-    "masa de tarta": "tapa de tarta"
-}
-
-# 2. BASE DE DATOS CON LAS RECETAS COMPLETAS
+# 1. BASE DE DATOS CON LAS RECETAS COMPLETAS
 RECETAS = [
     {
         "titulo": "Pastel de Papa con Aceitunas",
@@ -410,26 +352,6 @@ RECETAS = [
 2. Agregaremos el queso rallado y 5 fetas de queso de barra cortado en tiritas mezclar todo
 3. Enmantecar y forrar un molde de tarta con una de las hojas de masa volcar el relleno y tapar con la otra hoja de masa apretando los bordes para cerrar bien
 4. Recortar los excedentes de la masa y llevar a horno hasta dorar."""
-    },
-    {
-        "titulo": "Tarta de mermelada de frutilla y crumble",
-        "ingredientes_clave": ["harina", "huevo", "azucar", "mermelada", "nuez", "manteca"],
-        "texto_ingredientes": """Masa:
-- 2 tazas harina leudante
-- Ralladura limón o naranja y Esencia de vainilla
-- 2 huevos
-- 75 cc aceite
-- 150 grs azúcar
-- 1 pote de mermelada sabor a gusto (use frutilla)
-- 50 grs nueces
-Crumble:
-- 100 grs harina
-- 100 azúcar
-- 80 grs manteca""",
-        "pasos": """1. Para la masa vamos poner en un bols huevos azúcar ralladura esencia y aceite mezclamos y le vamos incorporando la harina integramos hasta formar un bollo
-2. En un molde rectangular o de tarta estiramos la masa, encima le untamos la mermelada elegida, encima le espolvoreamos las nueces
-3. Para el crumble hacemos un arenado con la manteca fría el azúcar y la harina y lo esparcimos sobre el dulce
-4. Cocinamos en un horno moderado de 25 a 30 minutos."""
     },
     {
         "titulo": "Tarta de Manzana invertida",
@@ -856,24 +778,44 @@ Cubierta:
     }
 ]
 
-# 3. GENERACIÓN AUTOMÁTICA DE LA LISTA DE INGREDIENTES PARA EL MENÚ
+# 2. SISTEMA DE CATEGORIZACIÓN SEMÁNTICA (Automático)
+CATEGORIAS_MAP = {
+    "🥩 Carnes y Proteínas": ["carne", "cerdo", "pollo", "milanesa", "chorizo", "panceta", "salchicha", "higado", "atun", "jamon"],
+    "🧀 Lácteos y Huevos": ["huevo", "yogurt", "queso", "crema de leche", "leche", "queso crema", "dulce de leche", "manteca", "ricota", "leche condensada"],
+    "🥦 Vegetales y Legumbres": ["papa", "cebolla", "aceituna", "ajo", "tomate", "zapallito", "zapallo", "zanahoria", "morron", "zucchini", "verdeo", "arveja", "choclo", "espinaca", "acelga", "remolacha", "garbanzo", "apio", "brocoli", "puerro", "pure de tomate"],
+    "🍎 Frutas y Frutos Secos": ["kiwi", "limon", "frutilla", "nuez", "manzana", "banana", "pera", "coco", "almendra"]
+}
+
+# Extraemos los ingredientes únicos de la base de recetas
 ingredientes_unicos = set()
 for receta in RECETAS:
-    for ingrediente in receta["ingredientes_clave"]:
-        ingredientes_unicos.add(ingrediente)
+    for ing in receta["ingredientes_clave"]:
+        ingredientes_unicos.add(ing)
 
-LISTA_INGREDIENTES_UI = sorted(list(ingredientes_unicos))
+# Armamos un diccionario agrupando por las categorías semánticas
+INGREDIENTES_POR_CATEGORIA = {cat: [] for cat in CATEGORIAS_MAP.keys()}
+INGREDIENTES_POR_CATEGORIA["🌾 Despensa y Otros"] = [] # Todo lo que no encaja va acá
 
-# 4. LÓGICA DE BÚSQUEDA
+for ing in sorted(list(ingredientes_unicos)):
+    encontrado = False
+    for cat, lista_keywords in CATEGORIAS_MAP.items():
+        if ing in lista_keywords:
+            INGREDIENTES_POR_CATEGORIA[cat].append(ing)
+            encontrado = True
+            break
+    if not encontrado:
+        INGREDIENTES_POR_CATEGORIA["🌾 Despensa y Otros"].append(ing)
+
+# 3. LÓGICA DE BÚSQUEDA
 def buscar_recetas(ingredientes_usuario):
     set_usuario = set(ingredientes_usuario)
-    
     exactas = []
     casi_listas = []
 
     for receta in RECETAS:
         set_receta = set(receta["ingredientes_clave"])
         
+        # Filtro estricto: al menos un ingrediente coincidente
         if not set_receta.intersection(set_usuario):
             continue
 
@@ -889,18 +831,16 @@ def buscar_recetas(ingredientes_usuario):
 
     return exactas, casi_listas
 
-# 5. INTERFAZ DE USUARIO Y DISEÑO GRÁFICO (CSS)
+# 4. INTERFAZ DE USUARIO Y DISEÑO GRÁFICO (CSS)
 st.set_page_config(page_title="¿Qué cocino hoy?", page_icon="🍳")
 
-# BLOQUE CSS COMPLETO CON LOS 8 COMPARTIMENTOS
+# BLOQUE CSS COMPLETO
 st.markdown("""
 <style>
-/* 1. FONDO GENERAL DE LA APP */
 .stApp {
     background-color: #FDFBF5;
 }
 
-/* 2. TÍTULOS Y PROSA GENERAL DE LA APP */
 h1, h2, h3 {
     color: #1E3A14 !important;
 }
@@ -909,11 +849,12 @@ h1, h2, h3 {
     color: #2F3324;
 }
 
-/* 3. COMPARTIMENTO: SELECTOR DE INGREDIENTES (INPUT) */
+/* ESTILOS PARA LOS MULTISELECT CATEGORIZADOS */
 div[data-testid="stMultiSelect"] label {
     color: #1E3A14 !important;
     font-size: 1.1rem;
     font-weight: bold;
+    margin-top: 10px; /* Para separar un poco los campos */
 }
 
 div[data-baseweb="select"] > div {
@@ -930,7 +871,6 @@ div[data-baseweb="select"] input {
     color: #1E3A14 !important;
 }
 
-/* 4. COMPARTIMENTO: MENÚ DESPLEGABLE (LISTA DE OPCIONES PARA ELEGIR) */
 ul[data-baseweb="menu"] {
     background-color: #FFFFFF !important;
     border: 1px solid #4F6D23 !important;
@@ -946,7 +886,6 @@ li[data-baseweb="option"]:hover, li[data-baseweb="option"][aria-selected="true"]
     color: #FFFFFF !important;             
 }
 
-/* 5. COMPARTIMENTO: ETIQUETAS ELEGIDAS (CHIPS) */
 span[data-baseweb="tag"] {
     background-color: #FBB229 !important; 
     border-radius: 6px !important;
@@ -961,7 +900,7 @@ span[data-baseweb="tag"] svg {
     fill: #1E3A14 !important;
 }
 
-/* 6. BOTÓN PRINCIPAL "BUSCAR RECETAS" */
+/* ESTILOS BOTÓN BÚSQUEDA */
 div.stButton > button:first-child {
     background-color: #D22211 !important;
     color: #FFFFFF !important;
@@ -970,6 +909,7 @@ div.stButton > button:first-child {
     font-weight: bold;
     padding: 0.6rem 1.2rem;
     transition: 0.3s;
+    margin-top: 20px;
 }
 
 div.stButton > button:first-child:hover {
@@ -977,30 +917,24 @@ div.stButton > button:first-child:hover {
     color: #FFFFFF !important;
 }
 
-/* 7. BOTÓN "VER RECETA COMPLETA" */
+/* BOTÓN DESPLEGABLE DE RECETAS */
 .streamlit-expanderHeader {
-    color: #4F6D23 !important;
+    color: #1E3A14 !important;
     font-weight: bold;
-    background-color: #FFFFFF !important;
-    border: 1px solid #99A12D !important;
+    background-color: #FDFBF5 !important;
+    border: 2px solid #4F6D23 !important;
     border-radius: 6px !important;
 }
 
-/* ==================================================================
-   8. COMPARTIMENTO: TEXTO DE LAS RECETAS Y PASOS (DENTRO DEL DESPLEGABLE)
-   ================================================================== */
-
-/* A. Fondo de la hoja de la receta */
+/* CAJA DE TEXTO RECETAS Y PASOS */
 div[data-testid="stExpanderDetails"] {
     background-color: #FFFFFF !important; 
-    border: 1px solid #99A12D !important;
+    border: 2px solid #99A12D !important;
     border-top: none !important;
     border-radius: 0 0 6px 6px !important;
     padding: 1.5rem !important;
 }
 
-/* C. TEXTO (A PRUEBA DE MODO OSCURO) */
-/* El asterisco (*) obliga a CUALQUIER elemento ahí adentro a tener este color */
 div[data-testid="stExpanderDetails"],
 div[data-testid="stExpanderDetails"] * {
     color: #2F3324 !important; 
@@ -1009,60 +943,100 @@ div[data-testid="stExpanderDetails"] * {
     white-space: pre-wrap !important;
 }
 
-/* B. Subtítulos ("INGREDIENTES:" y "PASO A PASO:") */
-/* Lo ponemos al final para que el asterisco de arriba no nos borre el rojo */
 div[data-testid="stExpanderDetails"] p strong,
 div[data-testid="stExpanderDetails"] strong {
     color: #D22211 !important; 
     font-size: 1.1rem !important;
     text-transform: uppercase !important;
 }
+
+/* ESTILOS TÍTULOS Y AVISOS DE FALTANTES */
+.titulo-exacta {
+    background-color: #4F6D23;
+    color: #FFFFFF !important;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-align: center;
+    border: 2px solid #1E3A14;
+    margin-bottom: 10px;
+}
+
+.titulo-parcial {
+    background-color: #DE770F;
+    color: #FFFFFF !important;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-align: center;
+    border: 2px solid #691410;
+    margin-bottom: 5px;
+}
+
+.alerta-faltantes {
+    background-color: #FDFBF5;
+    color: #D22211 !important;
+    border-left: 5px solid #D22211;
+    border-radius: 4px;
+    padding: 12px;
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+}
 </style>
 """, unsafe_allow_html=True)
 
 
 st.title("🍳 ¿Qué cocino hoy?")
-st.write("Seleccioná los ingredientes que tenés en la heladera o despensa. (Asumimos que tenés sal, aceite y agua).")
+st.write("Seleccioná los ingredientes separándolos por su categoría. (Asumimos que tenés sal, aceite, condimentos y agua).")
 
-# MENÚ DESPLEGABLE DE LA UI
-ingredientes_input = st.multiselect(
-    "Tus ingredientes:", 
-    options=LISTA_INGREDIENTES_UI,
-    placeholder="Hacé clic acá para elegir o buscar ingredientes..."
-)
+# CAMPOS DE SELECCIÓN POR CATEGORÍA
+ingredientes_seleccionados_totales = []
+
+for categoria, opciones_ingredientes in INGREDIENTES_POR_CATEGORIA.items():
+    if opciones_ingredientes: # Solo mostramos la categoría si hay ingredientes adentro
+        seleccion = st.multiselect(
+            categoria, 
+            options=opciones_ingredientes,
+            placeholder=f"Elegí tus {categoria.split(' ')[1].lower()}..."
+        )
+        # Sumamos todo a una sola lista unificada para que el buscador haga lo suyo
+        ingredientes_seleccionados_totales.extend(seleccion)
 
 if st.button("Buscar Recetas"):
-    if ingredientes_input:
-        exactas, casi_listas = buscar_recetas(ingredientes_input)
+    if ingredientes_seleccionados_totales:
+        exactas, casi_listas = buscar_recetas(ingredientes_seleccionados_totales)
         
         if exactas:
             st.success("¡Tenés todo para preparar esto! 🍽️")
             for r in exactas:
-                st.subheader(r["titulo"])
+                st.markdown(f"<div class='titulo-exacta'>{r['titulo']}</div>", unsafe_allow_html=True)
                 
-                with st.expander("📖 Ver receta completa"):
+                with st.expander("Ver receta"):
                     st.markdown("**Ingredientes:**")
                     st.text(r["texto_ingredientes"])
                     st.markdown("**Paso a paso:**")
                     st.text(r["pasos"])
-                st.divider()
-        
+                st.write("") 
+                
         if casi_listas:
             st.info("Te faltan hasta 2 ingredientes para estas recetas: 🛒")
             for r in casi_listas:
-                st.subheader(r["titulo"])
-                faltantes_str = ", ".join(r["ingredientes_faltantes"])
-                st.warning(f"**Te falta/n:** {faltantes_str}")
+                st.markdown(f"<div class='titulo-parcial'>{r['titulo']}</div>", unsafe_allow_html=True)
                 
-                with st.expander("📖 Ver receta completa"):
+                faltantes_str = ", ".join(r["ingredientes_faltantes"])
+                st.markdown(f"<div class='alerta-faltantes'>🛒 <strong>Te falta/n:</strong> {faltantes_str}</div>", unsafe_allow_html=True)
+                
+                with st.expander("Ver receta"):
                     st.markdown("**Ingredientes:**")
                     st.text(r["texto_ingredientes"])
                     st.markdown("**Paso a paso:**")
                     st.text(r["pasos"])
-                st.divider()
+                st.write("") 
                 
         if not exactas and not casi_listas:
             st.warning("No encontramos recetas que coincidan con lo que elegiste. ¡Probá seleccionando algo más!")
             
     else:
-        st.error("Por favor, seleccioná al menos un ingrediente del menú.")
+        st.error("Por favor, seleccioná al menos un ingrediente de cualquier categoría.")
