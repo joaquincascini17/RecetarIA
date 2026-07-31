@@ -900,87 +900,75 @@ st.set_page_config(page_title="¿Qué cocino hoy?", page_icon="🍳")
 # Verde lima: #99A12D | Verde medio: #4F6D23 | Verde oscuro: #1E3A14
 
 st.markdown("""
+st.markdown("""
 <style>
-/* 1. FONDO GENERAL */
+/* 1. FONDO GENERAL DE LA APP */
 .stApp {
     background-color: #FDFBF5;
 }
 
-/* 2. TÍTULOS Y PROSA GENERAL */
+/* 2. TÍTULOS Y PROSA GENERAL DE LA APP */
 h1, h2, h3 {
     color: #1E3A14 !important;
 }
 
-/* Texto de la app (pasos, info, etc) sin pisar los inputs */
 .stMarkdown p, .stMarkdown li {
     color: #2F3324;
 }
 
 /* 3. COMPARTIMENTO: SELECTOR DE INGREDIENTES (INPUT) */
-
-/* Label ("Tus ingredientes:") */
 div[data-testid="stMultiSelect"] label {
     color: #1E3A14 !important;
     font-size: 1.1rem;
     font-weight: bold;
 }
 
-/* Caja principal del selector */
 div[data-baseweb="select"] > div {
-    background-color: #FFFFFF !important; /* Fondo blanco para limpiar */
-    border: 2px solid #4F6D23 !important; /* Borde verde claro */
+    background-color: #FFFFFF !important; 
+    border: 2px solid #4F6D23 !important; 
     border-radius: 8px !important;
 }
 
-/* Texto del placeholder ("Hacé clic acá para elegir...") */
 div[data-baseweb="select"] input::placeholder {
     color: #7A8B6E !important;
 }
 
-/* Texto que escribís mientras buscás adentro de la caja */
 div[data-baseweb="select"] input {
     color: #1E3A14 !important;
 }
 
-/* 4. COMPARTIMENTO: MENÚ DESPLEGABLE (OPCIONES) */
-
-/* Fondo de la lista que se despliega */
+/* 4. COMPARTIMENTO: MENÚ DESPLEGABLE (LISTA DE OPCIONES PARA ELEGIR) */
 ul[data-baseweb="menu"] {
     background-color: #FFFFFF !important;
     border: 1px solid #4F6D23 !important;
 }
 
-/* Opciones de la lista */
 li[data-baseweb="option"] {
-    color: #1E3A14 !important; /* Texto de cada opción */
+    color: #1E3A14 !important; 
     background-color: #FFFFFF !important;
 }
 
-/* Opción cuando le pasás el mouse encima */
 li[data-baseweb="option"]:hover, li[data-baseweb="option"][aria-selected="true"] {
-    background-color: #99A12D !important; /* Fondo verde al pasar el mouse */
-    color: #FFFFFF !important;             /* Texto blanco al pasar el mouse */
+    background-color: #99A12D !important; 
+    color: #FFFFFF !important;             
 }
 
 /* 5. COMPARTIMENTO: ETIQUETAS ELEGIDAS (CHIPS) */
-
 span[data-baseweb="tag"] {
-    background-color: #FBB229 !important; /* Fondo amarillo */
+    background-color: #FBB229 !important; 
     border-radius: 6px !important;
 }
 
-/* Texto adentro de la etiqueta elegida */
 span[data-baseweb="tag"] span {
     color: #1E3A14 !important;
     font-weight: bold !important;
 }
 
-/* Cruz (x) para borrar la etiqueta */
 span[data-baseweb="tag"] svg {
     fill: #1E3A14 !important;
 }
 
-/* 6. BOTÓN PRINCIPAL */
+/* 6. BOTÓN PRINCIPAL "BUSCAR RECETAS" */
 div.stButton > button:first-child {
     background-color: #D22211 !important;
     color: #FFFFFF !important;
@@ -996,11 +984,7 @@ div.stButton > button:first-child:hover {
     color: #FFFFFF !important;
 }
 
-/* 7. OTROS DETALLES */
-hr {
-    border-bottom: 2px solid #99A12D !important;
-}
-
+/* 7. BOTÓN "VER RECETA COMPLETA" */
 .streamlit-expanderHeader {
     color: #4F6D23 !important;
     font-weight: bold;
@@ -1008,7 +992,37 @@ hr {
     border: 1px solid #99A12D !important;
     border-radius: 6px !important;
 }
+
+/* ==================================================================
+   8. COMPARTIMENTO: TEXTO DE LAS RECETAS Y PASOS (DENTRO DEL DESPLEGABLE)
+   ================================================================== */
+
+/* A. Fondo de la hoja de la receta */
+div[data-testid="stExpanderDetails"] {
+    background-color: #FFFFFF !important; /* <--- Fondo del recuadro de la receta */
+    border: 1px solid #99A12D !important;
+    border-top: none !important;
+    border-radius: 0 0 6px 6px !important;
+    padding: 1.5rem !important;
+}
+
+/* B. Subtítulos ("INGREDIENTES:" y "PASO A PASO:") */
+div[data-testid="stExpanderDetails"] p strong {
+    color: #D22211 !important; /* <--- Color de las palabras INGREDIENTES / PASOS */
+    font-size: 1.1rem;
+    text-transform: uppercase;
+}
+
+/* C. TEXTO DE LOS INGREDIENTES Y PASOS */
+div[data-testid="stExpanderDetails"] div[data-testid="stText"] {
+    color: #2F3324 !important; /* <--- CAMBIÁ ESTE CÓDIGO para cambiar el color de las letras de los ingredientes y pasos */
+    font-family: "Helvetica", "Arial", sans-serif !important;
+    font-size: 1rem !important;
+    line-height: 1.6 !important;
+    white-space: pre-wrap !important;
+}
 </style>
+""", unsafe_allow_html=True)
 """, unsafe_allow_html=True)
 # --- FIN DE LA NUEVA GRÁFICA ---
 
