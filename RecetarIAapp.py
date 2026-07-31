@@ -993,7 +993,7 @@ div[data-testid="stExpanderDetails"] strong {
 
 
 st.title("🍳 ¿Qué cocino hoy?")
-st.write("Seleccioná los ingredientes separándolos por su categoría. (Asumimos que tenés sal, aceite, condimentos y agua).")
+st.write("Seleccioná los ingredientes separándolos por su categoría.")
 
 # CAMPOS DE SELECCIÓN POR CATEGORÍA
 ingredientes_seleccionados_totales = []
@@ -1040,7 +1040,7 @@ if st.button("Buscar Recetas"):
                 st.write("") 
                 
         if not exactas and not casi_listas:
-            st.warning("No encontramos recetas que coincidan con lo que elegiste. ¡Probá seleccionando algo más!")
+            st.warning("No encontramos recetas que coincidan con lo que elegiste. Pedile algun ingrediente a tu vecina!")
             
     else:
         st.error("Por favor, seleccioná al menos un ingrediente de cualquier categoría.")
