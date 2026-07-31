@@ -862,7 +862,6 @@ for receta in RECETAS:
     for ingrediente in receta["ingredientes_clave"]:
         ingredientes_unicos.add(ingrediente)
 
-# Ordenamos alfabéticamente para que sea fácil de buscar en la app
 LISTA_INGREDIENTES_UI = sorted(list(ingredientes_unicos))
 
 # 4. LÓGICA DE BÚSQUEDA
@@ -875,7 +874,6 @@ def buscar_recetas(ingredientes_usuario):
     for receta in RECETAS:
         set_receta = set(receta["ingredientes_clave"])
         
-        # REGLA ESTRICTA: La receta DEBE tener al menos un ingrediente de los que seleccionaste.
         if not set_receta.intersection(set_usuario):
             continue
 
@@ -891,15 +889,10 @@ def buscar_recetas(ingredientes_usuario):
 
     return exactas, casi_listas
 
-# 5. INTERFAZ DE USUARIO Y DISEÑO GRÁFICO
+# 5. INTERFAZ DE USUARIO Y DISEÑO GRÁFICO (CSS)
 st.set_page_config(page_title="¿Qué cocino hoy?", page_icon="🍳")
 
-# --- INICIO DE LA NUEVA GRÁFICA ---
-# Colores extraídos de tu paleta:
-# Rojo oscuro: #691410 | Rojo: #D22211 | Naranja: #DE770F | Amarillo: #FBB229 
-# Verde lima: #99A12D | Verde medio: #4F6D23 | Verde oscuro: #1E3A14
-
-st.markdown("""
+# BLOQUE CSS COMPLETO CON LOS 8 COMPARTIMENTOS
 st.markdown("""
 <style>
 /* 1. FONDO GENERAL DE LA APP */
@@ -999,7 +992,7 @@ div.stButton > button:first-child:hover {
 
 /* A. Fondo de la hoja de la receta */
 div[data-testid="stExpanderDetails"] {
-    background-color: #FFFFFF !important; /* <--- Fondo del recuadro de la receta */
+    background-color: #FFFFFF !important; /* Fondo del recuadro de la receta */
     border: 1px solid #99A12D !important;
     border-top: none !important;
     border-radius: 0 0 6px 6px !important;
@@ -1008,14 +1001,15 @@ div[data-testid="stExpanderDetails"] {
 
 /* B. Subtítulos ("INGREDIENTES:" y "PASO A PASO:") */
 div[data-testid="stExpanderDetails"] p strong {
-    color: #D22211 !important; /* <--- Color de las palabras INGREDIENTES / PASOS */
+    color: #D22211 !important; /* Color de las palabras INGREDIENTES / PASOS */
     font-size: 1.1rem;
     text-transform: uppercase;
 }
 
 /* C. TEXTO DE LOS INGREDIENTES Y PASOS */
+/* Modificamos el target para que agarre bien los st.text() en Streamlit */
 div[data-testid="stExpanderDetails"] div[data-testid="stText"] {
-    color: #2F3324 !important; /* <--- CAMBIÁ ESTE CÓDIGO para cambiar el color de las letras de los ingredientes y pasos */
+    color: #2F3324 !important; /* <-- Acá cambiás el color de los ingredientes */
     font-family: "Helvetica", "Arial", sans-serif !important;
     font-size: 1rem !important;
     line-height: 1.6 !important;
@@ -1023,13 +1017,12 @@ div[data-testid="stExpanderDetails"] div[data-testid="stText"] {
 }
 </style>
 """, unsafe_allow_html=True)
-""", unsafe_allow_html=True)
-# --- FIN DE LA NUEVA GRÁFICA ---
+
 
 st.title("🍳 ¿Qué cocino hoy?")
-st.write("Seleccioná los ingredientes que tenés en la heladera o despensa.")
+st.write("Seleccioná los ingredientes que tenés en la heladera o despensa. (Asumimos que tenés sal, aceite y agua).")
 
-# MENÚ DESPLEGABLE
+# MENÚ DESPLEGABLE DE LA UI
 ingredientes_input = st.multiselect(
     "Tus ingredientes:", 
     options=LISTA_INGREDIENTES_UI,
