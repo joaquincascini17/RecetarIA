@@ -999,23 +999,23 @@ div[data-testid="stExpanderDetails"] {
     padding: 1.5rem !important;
 }
 
-/* B. Subtítulos ("INGREDIENTES:" y "PASO A PASO:") */
-div[data-testid="stExpanderDetails"] p strong {
-    color: #D22211 !important; 
-    font-size: 1.1rem;
-    text-transform: uppercase;
+/* C. TEXTO (A PRUEBA DE MODO OSCURO) */
+/* El asterisco (*) obliga a CUALQUIER elemento ahí adentro a tener este color */
+div[data-testid="stExpanderDetails"],
+div[data-testid="stExpanderDetails"] * {
+    color: #2F3324 !important; 
+    background-color: transparent !important;
+    font-family: "Helvetica", "Arial", sans-serif !important;
+    white-space: pre-wrap !important;
 }
 
-/* C. TEXTO DE LOS INGREDIENTES Y PASOS (A prueba de balas) */
-div[data-testid="stExpanderDetails"] div[data-testid="stText"],
-div[data-testid="stExpanderDetails"] pre,
-div[data-testid="stExpanderDetails"] code {
-    color: #2F3324 !important; /* <--- Color de texto (Verde oscuro casi negro) */
-    background-color: transparent !important; /* <--- Evita que Streamlit le ponga fondos raros */
-    font-family: "Helvetica", "Arial", sans-serif !important;
-    font-size: 1rem !important;
-    line-height: 1.6 !important;
-    white-space: pre-wrap !important;
+/* B. Subtítulos ("INGREDIENTES:" y "PASO A PASO:") */
+/* Lo ponemos al final para que el asterisco de arriba no nos borre el rojo */
+div[data-testid="stExpanderDetails"] p strong,
+div[data-testid="stExpanderDetails"] strong {
+    color: #D22211 !important; 
+    font-size: 1.1rem !important;
+    text-transform: uppercase !important;
 }
 </style>
 """, unsafe_allow_html=True)
