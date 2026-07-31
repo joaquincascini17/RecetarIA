@@ -901,59 +901,112 @@ st.set_page_config(page_title="¿Qué cocino hoy?", page_icon="🍳")
 
 st.markdown("""
 <style>
-/* Color de fondo de la app (un crema muy suave para que los colores resalten bien) */
+/* 1. FONDO GENERAL */
 .stApp {
-    background-color: #f7ed8f;
+    background-color: #FDFBF5;
 }
 
-/* Títulos principales en Verde Oscuro */
+/* 2. TÍTULOS Y PROSA GENERAL */
 h1, h2, h3 {
     color: #1E3A14 !important;
 }
 
-/* Texto general un poco más oscuro para buena lectura */
-p, li, .stMarkdown {
-    color: #eeff03 !important;
+/* Texto de la app (pasos, info, etc) sin pisar los inputs */
+.stMarkdown p, .stMarkdown li {
+    color: #2F3324;
 }
 
-/* Diseño del Botón Principal (Rojo brillante con efecto Rojo oscuro al pasar el mouse) */
+/* 3. COMPARTIMENTO: SELECTOR DE INGREDIENTES (INPUT) */
+
+/* Label ("Tus ingredientes:") */
+div[data-testid="stMultiSelect"] label {
+    color: #1E3A14 !important;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+/* Caja principal del selector */
+div[data-baseweb="select"] > div {
+    background-color: #FFFFFF !important; /* Fondo blanco para limpiar */
+    border: 2px solid #4F6D23 !important; /* Borde verde claro */
+    border-radius: 8px !important;
+}
+
+/* Texto del placeholder ("Hacé clic acá para elegir...") */
+div[data-baseweb="select"] input::placeholder {
+    color: #7A8B6E !important;
+}
+
+/* Texto que escribís mientras buscás adentro de la caja */
+div[data-baseweb="select"] input {
+    color: #1E3A14 !important;
+}
+
+/* 4. COMPARTIMENTO: MENÚ DESPLEGABLE (OPCIONES) */
+
+/* Fondo de la lista que se despliega */
+ul[data-baseweb="menu"] {
+    background-color: #FFFFFF !important;
+    border: 1px solid #4F6D23 !important;
+}
+
+/* Opciones de la lista */
+li[data-baseweb="option"] {
+    color: #1E3A14 !important; /* Texto de cada opción */
+    background-color: #FFFFFF !important;
+}
+
+/* Opción cuando le pasás el mouse encima */
+li[data-baseweb="option"]:hover, li[data-baseweb="option"][aria-selected="true"] {
+    background-color: #99A12D !important; /* Fondo verde al pasar el mouse */
+    color: #FFFFFF !important;             /* Texto blanco al pasar el mouse */
+}
+
+/* 5. COMPARTIMENTO: ETIQUETAS ELEGIDAS (CHIPS) */
+
+span[data-baseweb="tag"] {
+    background-color: #FBB229 !important; /* Fondo amarillo */
+    border-radius: 6px !important;
+}
+
+/* Texto adentro de la etiqueta elegida */
+span[data-baseweb="tag"] span {
+    color: #1E3A14 !important;
+    font-weight: bold !important;
+}
+
+/* Cruz (x) para borrar la etiqueta */
+span[data-baseweb="tag"] svg {
+    fill: #1E3A14 !important;
+}
+
+/* 6. BOTÓN PRINCIPAL */
 div.stButton > button:first-child {
     background-color: #D22211 !important;
-    color: white !important;
+    color: #FFFFFF !important;
     border: none !important;
     border-radius: 8px;
     font-weight: bold;
+    padding: 0.6rem 1.2rem;
     transition: 0.3s;
 }
+
 div.stButton > button:first-child:hover {
     background-color: #691410 !important;
-    color: white !important;
+    color: #FFFFFF !important;
 }
 
-/* Etiquetas/Tags de los ingredientes seleccionados (Amarillo con texto Verde Oscuro) */
-span[data-baseweb="tag"] {
-    background-color: #FBB229 !important;
-    color: #1E3A14 !important;
-    font-weight: bold;
-    border: none;
-}
-
-/* Líneas separadoras (Verde lima) */
+/* 7. OTROS DETALLES */
 hr {
     border-bottom: 2px solid #99A12D !important;
 }
 
-/* Título de los botones desplegables de receta (Verde Medio) */
 .streamlit-expanderHeader {
-    color: #edd70c !important;
+    color: #4F6D23 !important;
     font-weight: bold;
-    border: 1px solid #99A12D;
-    border-radius: 5px;
-}
-
-/* Cajas de ingredientes faltantes (borde Naranja) */
-div[data-testid="stAlert"]:has(svg[aria-label="icon-info"]) {
-    border-left: 4px solid #DE770F;
+    background-color: #FFFFFF !important;
+    border: 1px solid #99A12D !important;
+    border-radius: 6px !important;
 }
 </style>
 """, unsafe_allow_html=True)
