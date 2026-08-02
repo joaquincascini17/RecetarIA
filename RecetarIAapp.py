@@ -445,7 +445,7 @@ st.markdown("""
 
 /* IMAGEN DE FONDO */
 .stApp {
-    background-image: url("https://images.unsplash.com/photo-1495195134817-a169d0dc3273?q=80&w=2000&auto=format&fit=crop");
+    background-image: url("https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgvh2HGg8fIp_MgI0uSjKsng9aJRjUmXU9VNM6CtHZ1BlVWY4-AQ_F2rGTuhBtzdzs9ooxh2H923vh-k7abOU4unxEDSQyc1gLDEjEi18HpFi6FWz81B7XEOxw-0KNp63hYmQj60iGIu5M/s1600/Interiorrojo_Naturalezamuertaenuncua%5B1%5D.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
