@@ -464,12 +464,12 @@ h1, h2, h3, h4 { color: #1E3A14 !important; }
 .stMarkdown p, .stMarkdown li { color: #2F3324; }
 
 /* ==============================================================
-   SECCIÓN 2: BANNERS HORIZONTALES POR CATEGORÍA
-   Acá puedes reemplazar las URLs de las imágenes ('url(...)')
+   SECCIÓN 2: BANNERS HORIZONTALES POR CATEGORÍA CORREGIDOS
+   Apuntamos a la posición real del contenedor en la pantalla
    ============================================================== */
 
-/* 1. Banner para "Carnes y Proteínas" */
-div[data-testid="stMultiSelect"]:nth-of-type(1) label {
+/* 1. Banner para "Carnes y Proteínas" (Es el 5to elemento en la página) */
+div.element-container:nth-child(5) div[data-testid="stMultiSelect"] label {
     background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://preview.colorkit.co/color/ffa07a.png?static=true');
     background-size: cover;
     background-position: center;
@@ -481,8 +481,8 @@ div[data-testid="stMultiSelect"]:nth-of-type(1) label {
     letter-spacing: 0.5px;
 }
 
-/* 2. Banner para "Lácteos y Huevos" */
-div[data-testid="stMultiSelect"]:nth-of-type(2) label {
+/* 2. Banner para "Lácteos y Huevos" (6to elemento) */
+div.element-container:nth-child(6) div[data-testid="stMultiSelect"] label {
     background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://caseformaking.com/cdn/shop/products/Egg-Yolk-Yellow-Square_1946x.jpg?v=1653565859');
     background-size: cover;
     background-position: center;
@@ -494,8 +494,8 @@ div[data-testid="stMultiSelect"]:nth-of-type(2) label {
     letter-spacing: 0.5px;
 }
 
-/* 3. Banner para "Vegetales y Legumbres" */
-div[data-testid="stMultiSelect"]:nth-of-type(3) label {
+/* 3. Banner para "Vegetales y Legumbres" (7mo elemento) */
+div.element-container:nth-child(7) div[data-testid="stMultiSelect"] label {
     background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://preview.colorkit.co/color/556b2f.png?static=true');
     background-size: cover;
     background-position: center;
@@ -507,8 +507,8 @@ div[data-testid="stMultiSelect"]:nth-of-type(3) label {
     letter-spacing: 0.5px;
 }
 
-/* 4. Banner para "Frutas y Frutos Secos" */
-div[data-testid="stMultiSelect"]:nth-of-type(4) label {
+/* 4. Banner para "Frutas y Frutos Secos" (8vo elemento) */
+div.element-container:nth-child(8) div[data-testid="stMultiSelect"] label {
     background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://i.pinimg.com/736x/d3/cb/b4/d3cbb4fec5527f09f18abd6b3ec44e14.jpg');
     background-size: cover;
     background-position: center;
@@ -520,8 +520,8 @@ div[data-testid="stMultiSelect"]:nth-of-type(4) label {
     letter-spacing: 0.5px;
 }
 
-/* 5. Banner para "Despensa y Otros" */
-div[data-testid="stMultiSelect"]:nth-of-type(5) label {
+/* 5. Banner para "Despensa y Otros" (9no elemento) */
+div.element-container:nth-child(9) div[data-testid="stMultiSelect"] label {
     background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://www.colorhexa.com/b59b7c.png');
     background-size: cover;
     background-position: center;
