@@ -1,7 +1,9 @@
 import streamlit as st
 import random
 
-# 1. BASE DE DATOS CON LAS RECETAS COMPLETAS Y NUEVOS PARÁMETROS
+# ==========================================
+# 1. BASE DE DATOS DE RECETAS
+# ==========================================
 RECETAS = [
     {
         "titulo": "Pastel de Papa con Aceitunas",
@@ -376,8 +378,9 @@ RECETAS = [
     }
 ]
 
-# 2. SISTEMA DE CATEGORIZACIÓN SEMÁNTICA (Automático)
-# Emojis eliminados de las claves para que los filtros se vean mejor
+# ==========================================
+# 2. CATEGORIZACIÓN SEMÁNTICA
+# ==========================================
 CATEGORIAS_MAP = {
     "Carnes y Proteínas": ["carne", "cerdo", "pollo", "milanesa", "chorizo", "panceta", "salchicha", "higado", "atun", "jamon"],
     "Lácteos y Huevos": ["huevo", "yogurt", "queso", "crema de leche", "leche", "queso crema", "dulce de leche", "manteca", "ricota", "leche condensada"],
@@ -403,8 +406,9 @@ for ing in sorted(list(ingredientes_unicos)):
     if not encontrado:
         INGREDIENTES_POR_CATEGORIA["Despensa y Otros"].append(ing)
 
-
+# ==========================================
 # 3. LÓGICA DE BÚSQUEDA Y FILTROS
+# ==========================================
 def buscar_recetas(ingredientes_usuario, filtros):
     set_usuario = set(ingredientes_usuario)
     exactas = []
@@ -418,7 +422,6 @@ def buscar_recetas(ingredientes_usuario, filtros):
         if filtros["sin_cubiertos"] and not receta.get("sin_cubiertos", False): continue
             
         set_receta = set(receta["ingredientes_clave"])
-        
         if not set_receta.intersection(set_usuario):
             continue
 
@@ -434,108 +437,151 @@ def buscar_recetas(ingredientes_usuario, filtros):
 
     return exactas, casi_listas
 
-# 4. INTERFAZ DE USUARIO Y DISEÑO GRÁFICO (CSS)
+# ==========================================
+# 4. CONFIGURACIÓN DE PÁGINA Y CSS
+# ==========================================
 st.set_page_config(page_title="¿Qué cocino hoy?", layout="centered")
 
 st.markdown("""
 <style>
-/* TIPOGRAFÍA GENERAL DINÁMICA (Sistemas modernos) */
+/* ==============================================================
+   SECCIÓN 1: ESTILOS GENERALES Y FONDO DE LA APP
+   ============================================================== */
 * {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
 }
 
-/* IMAGEN DE FONDO */
 .stApp {
-    /* Reemplazá este link por el de tu imagen */
     background-image: url("https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgvh2HGg8fIp_MgI0uSjKsng9aJRjUmXU9VNM6CtHZ1BlVWY4-AQ_F2rGTuhBtzdzs9ooxh2H923vh-k7abOU4unxEDSQyc1gLDEjEi18HpFi6FWz81B7XEOxw-0KNp63hYmQj60iGIu5M/s1600/Interiorrojo_Naturalezamuertaenuncua%5B1%5D.jpg");
-    
-    /* Mantiene la imagen más pequeña (ajustá el 150px al tamaño que prefieras) */
     background-size: 150px auto; 
-    
-    /* La repite verticalmente ('repeat-y') y la ubica en los extremos izquierdo y derecho */
     background-repeat: repeat-y;
     background-position: left top, right top;
-    
-    /* Fija el fondo para que no se mueva al hacer scroll */
     background-attachment: fixed;
-    
-    /* Color de respaldo para el centro de la pantalla */
     background-color: #FDFBF5; 
 }
-h1, h2, h3, h4 {
-    color: #1E3A14 !important;
+
+h1, h2, h3, h4 { color: #1E3A14 !important; }
+.stMarkdown p, .stMarkdown li { color: #2F3324; }
+
+/* ==============================================================
+   SECCIÓN 2: BANNERS HORIZONTALES POR CATEGORÍA
+   Acá puedes reemplazar las URLs de las imágenes ('url(...)')
+   ============================================================== */
+
+/* 1. Banner para "Carnes y Proteínas" */
+div[data-testid="stMultiSelect"]:nth-of-type(1) label {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?auto=format&fit=crop&w=800&q=80');
+    background-size: cover;
+    background-position: center;
+    color: #FFFFFF !important;
+    padding: 12px 20px;
+    border-radius: 8px;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.9);
+    font-size: 1.15rem;
+    letter-spacing: 0.5px;
 }
 
-.stMarkdown p, .stMarkdown li {
-    color: #2F3324;
+/* 2. Banner para "Lácteos y Huevos" */
+div[data-testid="stMultiSelect"]:nth-of-type(2) label {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1628088062854-d1870b4553da?auto=format&fit=crop&w=800&q=80');
+    background-size: cover;
+    background-position: center;
+    color: #FFFFFF !important;
+    padding: 12px 20px;
+    border-radius: 8px;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.9);
+    font-size: 1.15rem;
+    letter-spacing: 0.5px;
 }
 
-/* FILTROS (CHECKBOXES CON TICS DEL COLOR DE LA GRÁFICA) */
-div[data-testid="stCheckbox"] label {
-    color: #2F3324 !important;
-    font-weight: 600;
+/* 3. Banner para "Vegetales y Legumbres" */
+div[data-testid="stMultiSelect"]:nth-of-type(3) label {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=800&q=80');
+    background-size: cover;
+    background-position: center;
+    color: #FFFFFF !important;
+    padding: 12px 20px;
+    border-radius: 8px;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.9);
+    font-size: 1.15rem;
+    letter-spacing: 0.5px;
 }
 
-div[data-baseweb="checkbox"] input:checked + div {
-    background-color: #4F6D23 !important;
-    border-color: #1E3A14 !important;
-}
-div[data-baseweb="checkbox"] input:checked + div svg path {
-    fill: #FFFFFF !important;
-}
-
-/* MULTISELECT CATEGORIZADOS */
-div[data-testid="stMultiSelect"] label {
-    color: #1E3A14 !important;
-    font-size: 1.1rem;
-    font-weight: bold;
-    margin-top: 10px;
+/* 4. Banner para "Frutas y Frutos Secos" */
+div[data-testid="stMultiSelect"]:nth-of-type(4) label {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1619566636858-adf3ef46400b?auto=format&fit=crop&w=800&q=80');
+    background-size: cover;
+    background-position: center;
+    color: #FFFFFF !important;
+    padding: 12px 20px;
+    border-radius: 8px;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.9);
+    font-size: 1.15rem;
+    letter-spacing: 0.5px;
 }
 
+/* 5. Banner para "Despensa y Otros" */
+div[data-testid="stMultiSelect"]:nth-of-type(5) label {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&w=800&q=80');
+    background-size: cover;
+    background-position: center;
+    color: #FFFFFF !important;
+    padding: 12px 20px;
+    border-radius: 8px;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.9);
+    font-size: 1.15rem;
+    letter-spacing: 0.5px;
+}
+
+/* ==============================================================
+   SECCIÓN 3: COMPONENTES MULTISELECT Y TAGS ELEGIDOS
+   ============================================================== */
 div[data-baseweb="select"] > div {
     background-color: #FFFFFF !important; 
     border: 2px solid #4F6D23 !important; 
     border-radius: 8px !important;
 }
-
-div[data-baseweb="select"] input::placeholder {
-    color: #7A8B6E !important;
-}
-
-div[data-baseweb="select"] input {
-    color: #1E3A14 !important;
-}
+div[data-baseweb="select"] input::placeholder { color: #7A8B6E !important; }
+div[data-baseweb="select"] input { color: #1E3A14 !important; }
 
 ul[data-baseweb="menu"] {
     background-color: #FFFFFF !important;
     border: 1px solid #4F6D23 !important;
 }
-
 li[data-baseweb="option"] {
     color: #1E3A14 !important; 
     background-color: #FFFFFF !important;
 }
-
 li[data-baseweb="option"]:hover, li[data-baseweb="option"][aria-selected="true"] {
     background-color: #99A12D !important; 
     color: #FFFFFF !important;               
 }
-
 span[data-baseweb="tag"] {
     background-color: #FBB229 !important; 
     border-radius: 6px !important;
 }
-
 span[data-baseweb="tag"] span {
     color: #1E3A14 !important;
     font-weight: bold !important;
 }
+span[data-baseweb="tag"] svg { fill: #1E3A14 !important; }
 
-span[data-baseweb="tag"] svg {
-    fill: #1E3A14 !important;
+/* ==============================================================
+   SECCIÓN 4: CHECKBOXES (FILTROS)
+   ============================================================== */
+div[data-testid="stCheckbox"] label {
+    color: #2F3324 !important;
+    font-weight: 600;
 }
+div[data-baseweb="checkbox"] input:checked + div {
+    background-color: #4F6D23 !important;
+    border-color: #1E3A14 !important;
+}
+div[data-baseweb="checkbox"] input:checked + div svg path { fill: #FFFFFF !important; }
 
-/* BOTONES GLOBALES */
+/* ==============================================================
+   SECCIÓN 5: BOTONES
+   ============================================================== */
 div.stButton > button {
     border: none !important;
     border-radius: 8px;
@@ -544,7 +590,6 @@ div.stButton > button {
     transition: 0.3s;
     width: 100%;
 }
-
 div[data-testid="column"]:nth-of-type(1) div.stButton > button {
     background-color: #D22211 !important;
     color: #FFFFFF !important;
@@ -552,7 +597,6 @@ div[data-testid="column"]:nth-of-type(1) div.stButton > button {
 div[data-testid="column"]:nth-of-type(1) div.stButton > button:hover {
     background-color: #691410 !important;
 }
-
 div[data-testid="column"]:nth-of-type(2) div.stButton > button {
     background-color: #4F6D23 !important;
     color: #FFFFFF !important;
@@ -561,23 +605,20 @@ div[data-testid="column"]:nth-of-type(2) div.stButton > button:hover {
     background-color: #1E3A14 !important;
 }
 
-/* BOTÓN DESPLEGABLE DE RECETAS (Adiós arrow_right) */
+/* ==============================================================
+   SECCIÓN 6: CAJAS DE RECETAS (EXPANDERS)
+   ============================================================== */
 [data-testid="stExpander"] summary {
     border: 2px solid #4F6D23 !important;
     border-radius: 6px !important;
     background-color: #FDFBF5 !important;
 }
-/* Solo apuntamos al texto (p) y al ícono (svg), sin usar el asterisco (*) */
 [data-testid="stExpander"] summary p {
     color: #1E3A14 !important;
     font-weight: bold !important;
 }
-[data-testid="stExpander"] summary svg {
-    color: #1E3A14 !important;
-}
+[data-testid="stExpander"] summary svg { color: #1E3A14 !important; }
 
-
-/* CAJA DE TEXTO RECETAS */
 div[data-testid="stExpanderDetails"] {
     background-color: #FFFFFF !important; 
     border: 2px solid #99A12D !important;
@@ -585,7 +626,6 @@ div[data-testid="stExpanderDetails"] {
     border-radius: 0 0 6px 6px !important;
     padding: 1.5rem !important;
 }
-
 div[data-testid="stExpanderDetails"] * {
     color: #2F3324 !important; 
     background-color: transparent !important;
@@ -594,7 +634,6 @@ div[data-testid="stExpanderDetails"] * {
     line-height: 1.6 !important;
     font-size: 1.05rem !important;
 }
-
 div[data-testid="stExpanderDetails"] p strong,
 div[data-testid="stExpanderDetails"] strong {
     color: #D22211 !important; 
@@ -603,7 +642,9 @@ div[data-testid="stExpanderDetails"] strong {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important; 
 }
 
-/* ESTILOS TÍTULOS Y AVISOS */
+/* ==============================================================
+   SECCIÓN 7: AVISOS Y TITULARES DE RESULTADOS
+   ============================================================== */
 .titulo-exacta {
     background-color: #4F6D23;
     color: #FFFFFF !important;
@@ -615,7 +656,6 @@ div[data-testid="stExpanderDetails"] strong {
     border: 2px solid #1E3A14;
     margin-bottom: 10px;
 }
-
 .titulo-parcial {
     background-color: #DE770F;
     color: #FFFFFF !important;
@@ -627,7 +667,6 @@ div[data-testid="stExpanderDetails"] strong {
     border: 2px solid #691410;
     margin-bottom: 5px;
 }
-
 .alerta-faltantes {
     background-color: #FDFBF5;
     color: #D22211 !important;
@@ -640,7 +679,12 @@ div[data-testid="stExpanderDetails"] strong {
 </style>
 """, unsafe_allow_html=True)
 
-# TÍTULO PRINCIPAL CON IMAGEN (Acá podés cambiar el "src" por el link de tu propia imagen)
+
+# ==========================================
+# 5. RENDERIZADO DE LA INTERFAZ (UI)
+# ==========================================
+
+# TÍTULO PRINCIPAL CON IMAGEN 
 st.markdown("""
 <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 10px;">
     <img src="https://cdn-icons-png.flaticon.com/512/1830/1830839.png" alt="Icono de cocina" width="60">
@@ -697,6 +741,9 @@ with col_btn2:
     if st.button("Elegir una al azar"):
         azar_pulsado = True
 
+# ==========================================
+# 6. MOSTRAR RESULTADOS
+# ==========================================
 if buscar_pulsado or azar_pulsado:
     if ingredientes_seleccionados_totales:
         exactas, casi_listas = buscar_recetas(ingredientes_seleccionados_totales, filtros_dict)
