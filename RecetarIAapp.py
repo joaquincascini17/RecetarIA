@@ -375,17 +375,230 @@ RECETAS = [
         "celiaco": False, "vegano": False, "vegetariano": True, "sin_coccion": True, "sin_cubiertos": False,
         "texto_ingredientes": """- 24 vainillas\n- Leche c/n\n- 1 pote leche condensada\n- 1 pote crema\n- Jugo y ralladura de 2 limones""",
         "pasos": """1. Batir crema a medio punto, agregar leche condensada, jugo y ralladura de limón.\n2. Remojar vainillas en leche y hacer capas de vainillas y crema en una fuente.\n3. Refrigerar por tres horas."""
+    },
+    
+    # ------------------ NUEVAS RECETAS AGREGADAS ------------------
+    {
+        "titulo": "Risotto con calabaza",
+        "ingredientes_clave": ["calabaza", "cebolla de verdeo", "puerro", "cebolla", "arroz", "queso", "vino"],
+        "celiaco": True, "vegano": False, "vegetariano": True, "sin_coccion": False, "sin_cubiertos": False,
+        "texto_ingredientes": """- 1/2 calabaza (400g)\n- 2 o más tazas de agua o caldo\n- 3-4 cebollitas de verdeo o 2 puerros\n- 1/2 cebolla\n- 1 taza arroz de risotto\n- 100 g queso\n- Sal, pimienta, nuez moscada, vino blanco""",
+        "pasos": """1. Cortar la calabaza en cubos.\n2. Picar las verduras y sofreír en aceite de oliva.\n3. Agregar la calabaza al sofrito y cocinar hasta ablandar un poco.\n4. Agregar caldo o agua de a cucharones para que el arroz absorba (20-25').\n5. Agregar el arroz y saltear (momento del vino).\n6. Agregar el queso en cubos y nuez moscada para derretir."""
+    },
+    {
+        "titulo": "Risotto de hongos",
+        "ingredientes_clave": ["arroz", "cebolla de verdeo", "hongo", "queso", "vino", "manteca"],
+        "celiaco": True, "vegano": False, "vegetariano": True, "sin_coccion": False, "sin_cubiertos": False,
+        "texto_ingredientes": """- 300 g Arroz carnaroli\n- 4 unidades Cebolla de verdeo\n- 150 gramos Hongos\n- Caldo de verduras\n- Sal con curry, Pimienta, Laurel\n- Queso rallado y 1/2 copa vino blanco""",
+        "pasos": """1. Dorar el arroz y el verdeo en aceite de oliva y manteca.\n2. Ir poniendo de a poco el vino.\n3. Mezclar hasta que se vea cocido el arroz y agregar todos los hongos.\n4. Poner mucho queso rallado y servir."""
+    },
+    {
+        "titulo": "Risotto a la rúcula",
+        "ingredientes_clave": ["arroz", "rucula", "caldo", "queso"],
+        "celiaco": True, "vegano": False, "vegetariano": True, "sin_coccion": False, "sin_cubiertos": False,
+        "texto_ingredientes": """- 250 gr arroz\n- 200 gr rúcula\n- 1 cubito caldo de gallina\n- 500 ml agua\n- 100 gr queso rallado\n- Aceite, sal, pimienta""",
+        "pasos": """1. Lavar las hojas de rúcula.\n2. Disolver el caldo en el agua hirviendo.\n3. Saltear el arroz en aceite hasta que tome color.\n4. Agregar el caldo y cocinar durante 10 minutos.\n5. Salpimentar, incorporar la rúcula y el queso. Mezclar y dejar 5 minutos más."""
+    },
+    {
+        "titulo": "Risotto Clásico con Verduras",
+        "ingredientes_clave": ["arroz", "cebolla", "zanahoria", "morron", "vino", "caldo", "champiñon", "queso", "manteca"],
+        "celiaco": True, "vegano": False, "vegetariano": True, "sin_coccion": False, "sin_cubiertos": False,
+        "texto_ingredientes": """- 250 g Arroz carnaroli\n- 1 Cebolla blanca\n- 1 Zanahoria, 1 Pimiento rojo\n- 150 ml Vino blanco seco\n- 1 litro Caldo de ave\n- 1 lata Champiñones\n- 100 g Queso parmesano, 80 g Manteca""",
+        "pasos": """1. Rehogar cebolla, zanahoria y pimiento en aceite.\n2. Agregar el arroz y tostar 2 minutos.\n3. Añadir el vino blanco y dejar evaporar.\n4. Incorporar el caldo caliente en tandas.\n5. A los 15 minutos agregar los champiñones.\n6. Apagar fuego, añadir queso, manteca, sal y pimienta. Emulsionar."""
+    },
+    {
+        "titulo": "Risotto de champiñones y espinaca",
+        "ingredientes_clave": ["cebolla", "ajo", "espinaca", "champiñon", "arroz", "caldo", "queso"],
+        "celiaco": True, "vegano": False, "vegetariano": True, "sin_coccion": False, "sin_cubiertos": False,
+        "texto_ingredientes": """- 1 cebolla, 2 dientes ajo\n- 1 atado espinaca\n- 1 bandeja champiñones\n- 2 tazas arroz carnaroli\n- Caldo de pollo/verduras\n- Queso rallado, aceite, sal, pimienta""",
+        "pasos": """1. Sofreír ajo y cebolla. Agregar champiñones.\n2. Incorporar arroz, revolver 1 minuto, sumar la espinaca.\n3. Bajar el fuego e incorporar el caldo de a cucharones (20 min).\n4. Agregar queso rallado y servir."""
+    },
+    {
+        "titulo": "Risotto integral con verduras",
+        "ingredientes_clave": ["arroz", "espinaca", "zanahoria", "zapallo", "papa", "ajo", "cebolla", "tomate", "caldo"],
+        "celiaco": True, "vegano": False, "vegetariano": True, "sin_coccion": False, "sin_cubiertos": False,
+        "texto_ingredientes": """- 3 tacitas arroz integral\n- 1 paquete espinacas\n- 1 zanahoria, 1 rodaja zapallo, 1 papa\n- Ajo, perejil, 1 cebolla\n- 2 tomates\n- Caldo, condimentos""",
+        "pasos": """1. Rehogar cebolla, ajo, perejil. Agregar zanahoria y tomate.\n2. Sumar daditos de zapallo, papa y espinaca picada.\n3. Por último el arroz y el caldo.\n4. Cocinar 25 minutos y dejar reposar antes de servir."""
+    },
+    {
+        "titulo": "Sopa crema de verduras",
+        "ingredientes_clave": ["zanahoria", "morron", "cebolla", "zapallo", "ajo", "queso crema", "choclo"],
+        "celiaco": True, "vegano": False, "vegetariano": True, "sin_coccion": False, "sin_cubiertos": False,
+        "texto_ingredientes": """- 1 zanahoria, 1/2 pimiento, 1 cebolla\n- 1/2 zapallo, 2 dientes ajo\n- 70 gr queso crema\n- 100 gr choclo\n- 800 cc agua, sal, pimienta""",
+        "pasos": """1. Asar las verduras al horno (ajo y zapallo con cáscara para sacar luego el puré).\n2. Procesar o licuar todo junto con el agua y queso crema.\n3. Calentar en olla y servir."""
+    },
+    {
+        "titulo": "Sopa cremosa de mostaza",
+        "ingredientes_clave": ["puerro", "cebolla", "ajo", "manteca", "maicena", "mostaza", "caldo", "crema de leche", "panceta"],
+        "celiaco": True, "vegano": False, "vegetariano": False, "sin_coccion": False, "sin_cubiertos": False,
+        "texto_ingredientes": """- 1 puerro, 1 cebolla, 2 dientes ajo\n- 30 g manteca, 2 cdas maicena\n- 3 cdas mostaza\n- 1 litro caldo, 75 ml crema de leche\n- 200 g panceta (opcional)""",
+        "pasos": """1. Sofreír cebolla y ajo en manteca.\n2. Incorporar maicena, luego el puerro y el caldo poco a poco.\n3. Hervir 15 minutos.\n4. Dorar panceta aparte.\n5. Licuar sopa con mostaza y crema. Servir con panceta."""
+    },
+    {
+        "titulo": "Sopa paraguaya",
+        "ingredientes_clave": ["harina de maiz", "leche", "cebolla", "huevo", "morron", "queso", "manteca"],
+        "celiaco": True, "vegano": False, "vegetariano": True, "sin_coccion": False, "sin_cubiertos": True,
+        "texto_ingredientes": """- 500 grs harina de maíz amarillo\n- 1 litro leche\n- 1 Kg cebollas, 1 morrón\n- 4 huevos\n- 500 grs queso cremoso\n- Manteca y condimentos""",
+        "pasos": """1. Sofreír cebolla y morrón con manteca.\n2. Hervir la leche y agregar harina de maíz en forma de lluvia. Sumar el sofrito y el queso.\n3. Batir huevos y unir a la mezcla.\n4. Hornear en fuente enmantecada 45 min a 180°."""
+    },
+    {
+        "titulo": "Sopa crema de calabaza",
+        "ingredientes_clave": ["calabaza", "papa", "cebolla", "zanahoria", "ajo", "queso", "crema de leche"],
+        "celiaco": True, "vegano": False, "vegetariano": True, "sin_coccion": False, "sin_cubiertos": False,
+        "texto_ingredientes": """- 800 g Calabaza\n- 2 Papas, 1 Cebolla, 1 Zanahoria\n- Ajo en polvo, pimienta\n- Queso en hebras\n- 200 ml Crema de leche""",
+        "pasos": """1. Sofreír cebolla y sellar todas las verduras.\n2. Agregar agua y caldo, cocinar.\n3. Licuar todo junto a la crema de leche.\n4. Servir y gratinar con queso por encima."""
+    },
+    {
+        "titulo": "Sopa Crema de Verduras al Horno",
+        "ingredientes_clave": ["calabaza", "zanahoria", "cebolla", "batata", "queso crema", "caldo"],
+        "celiaco": True, "vegano": False, "vegetariano": True, "sin_coccion": False, "sin_cubiertos": False,
+        "texto_ingredientes": """- 1/2 Calabaza, 1 Zanahoria, 1 Cebolla, 1 Batata\n- Sal, pimienta, nuez moscada\n- Queso crema\n- 500 ml Caldo""",
+        "pasos": """1. Cortar verduras en cubos y asar 20 min en horno.\n2. Licuar las verduras asadas con el caldo.\n3. Llevar a cacerola unos 10 min para ajustar sabor.\n4. Servir con queso crema o rallado."""
+    },
+    {
+        "titulo": "Sopa de Cebolla Especial",
+        "ingredientes_clave": ["cebolla", "ajo", "manteca", "pan", "queso"],
+        "celiaco": False, "vegano": False, "vegetariano": True, "sin_coccion": False, "sin_cubiertos": False,
+        "texto_ingredientes": """- 1/2 kg Cebollas\n- Ajo a gusto\n- Abundante manteca\n- Rebanadas de pan tostado\n- Queso para gratinar""",
+        "pasos": """1. Saltear cebolla y ajo en manteca fuego mínimo (sin sal primero).\n2. Agregar sal para que suden y cocinar 45-60 min agregando chorritos de agua.\n3. Servir y coronar con pan tostado y queso gratinado."""
+    },
+    {
+        "titulo": "Sopa de Vegetales",
+        "ingredientes_clave": ["papa", "zapallo", "zanahoria", "apio", "choclo", "cebolla", "ajo", "repollo", "puerro"],
+        "celiaco": True, "vegano": True, "vegetariano": True, "sin_coccion": False, "sin_cubiertos": False,
+        "texto_ingredientes": """- 3 Papas, 1/2 Zapallo, 3 Zanahorias, 3 Ramas apio\n- 2 Choclos, 3 Cebollas, 2 Dientes ajo\n- Repollo blanco, Puerro\n- Condimentos varios y agua""",
+        "pasos": """1. Picar todas las verduras.\n2. Caramelizar cebollas, agregar puerro, apio y ajo.\n3. Incorporar el resto de verduras y cubrir con agua.\n4. Cocinar hasta que todo esté tierno. Decorar con semillas."""
+    },
+    {
+        "titulo": "Sopa Crema Apio y Zapallo",
+        "ingredientes_clave": ["apio", "zapallo", "choclo", "leche", "fideo", "queso"],
+        "celiaco": False, "vegano": False, "vegetariano": True, "sin_coccion": False, "sin_cubiertos": False,
+        "texto_ingredientes": """- Paquete pequeño de Apio\n- 300gr Zapallo\n- 1 rodaja Choclo\n- 1 taza Leche, Agua\n- Fideos cabello de ángel\n- Queso mantecoso""",
+        "pasos": """1. Hervir los vegetales hasta que estén tiernos.\n2. Agregar leche y fideos.\n3. Esperar que espese y servir con queso."""
+    },
+    {
+        "titulo": "Sopa Ramen con Sobras",
+        "ingredientes_clave": ["caldo", "pollo", "fideo", "huevo"],
+        "celiaco": False, "vegano": False, "vegetariano": False, "sin_coccion": False, "sin_cubiertos": False,
+        "texto_ingredientes": """- 500 ml Caldo de verduras y pollo\n- 50 g Pechuga de pollo cocida\n- 80 g Fideos ramen\n- 1 Huevo\n- Especias (jengibre, cúrcuma, curry)""",
+        "pasos": """1. Calentar el caldo y agregar especias.\n2. Sumar los fideos ramen.\n3. Verter el huevo batido en hilo fino revolviendo suavemente.\n4. Agregar el pollo en trozos. Servir caliente."""
+    },
+    {
+        "titulo": "Burritos rellenos con arroz de ayer",
+        "ingredientes_clave": ["tapa de tarta", "cebolla", "morron", "arroz", "huevo", "pure de tomate", "mostaza", "mayonesa"],
+        "celiaco": False, "vegano": False, "vegetariano": True, "sin_coccion": False, "sin_cubiertos": True,
+        "texto_ingredientes": """- Tapas de burritos (o tarta/empanada)\n- Arroz sobrante\n- Cebolla y morrón rehogados\n- 2 huevos batidos\n- Puré de tomate, mostaza, mayonesa""",
+        "pasos": """1. Mezclar el arroz, sofrito, tomate y mostaza en sartén.\n2. Incorporar huevo y cocinar.\n3. Untar mayonesa en la masa, rellenar y cerrar.\n4. Calentar en sartén u horno."""
+    },
+    {
+        "titulo": "Budín de pan con membrillo y pasas",
+        "ingredientes_clave": ["pan", "leche", "azucar", "huevo", "membrillo", "pasa de uva"],
+        "celiaco": False, "vegano": False, "vegetariano": True, "sin_coccion": False, "sin_cubiertos": False,
+        "texto_ingredientes": """- 350 g pan duro\n- 1 litro leche, 250 g azúcar\n- 5 huevos\n- 100 g dulce de membrillo, 50 g pasas hidratadas\n- Caramelo para el molde""",
+        "pasos": """1. Acaramelar molde.\n2. Hidratar pan en leche y licuar.\n3. Batir huevos e integrar.\n4. Volcar mezcla en molde, distribuir membrillo y pasas.\n5. Horno baño maría 160° por 60-75 min."""
+    },
+    {
+        "titulo": "Sal al Malbec",
+        "ingredientes_clave": ["vino", "sal"],
+        "celiaco": True, "vegano": True, "vegetariano": True, "sin_coccion": False, "sin_cubiertos": False,
+        "texto_ingredientes": """- Resto de Vino tinto (Malbec)\n- Sal entrefina""",
+        "pasos": """1. Volcar sal en el vino hasta que se embeba. Reposar.\n2. Calentar en sartén a fuego medio revolviendo hasta que se evapore el líquido.\n3. Extender sobre papel para secar bien. Guardar en frasco."""
+    },
+    {
+        "titulo": "Masa de tarta salada de polenta",
+        "ingredientes_clave": ["polenta", "harina de garbanzos", "huevo", "aceite"],
+        "celiaco": True, "vegano": False, "vegetariano": True, "sin_coccion": False, "sin_cubiertos": False,
+        "texto_ingredientes": """- 400 g Polenta cocida fría\n- 50 g Harina de garbanzos\n- Polvo de hornear\n- 1 Huevo, 30 ml Aceite""",
+        "pasos": """1. Desarmar la polenta fría en un bowl.\n2. Añadir harina de garbanzos, polvo de hornear, huevo y aceite.\n3. Esparcir en tartera y hornear 180° por 20 min antes de rellenar."""
+    },
+    {
+        "titulo": "Croquetas de Polenta Reciclada",
+        "ingredientes_clave": ["polenta", "harina", "cebolla", "huevo", "leche"],
+        "celiaco": False, "vegano": False, "vegetariano": True, "sin_coccion": False, "sin_cubiertos": True,
+        "texto_ingredientes": """- 250 grs polenta cocida\n- Harina integral, polvo de hornear\n- 1 huevo\n- Semillas, cebolla deshidratada, condimentos\n- Leche o soda c/n""",
+        "pasos": """1. Mezclar la polenta con todos los ingredientes.\n2. Armar bolitas (agregar leche si está muy seca).\n3. Cocinar en sartén o grill."""
+    },
+    {
+        "titulo": "Ensalada de palta",
+        "ingredientes_clave": ["palta", "huevo", "tomate"],
+        "celiaco": True, "vegano": False, "vegetariano": True, "sin_coccion": True, "sin_cubiertos": False,
+        "texto_ingredientes": """- 2 paltas\n- 2 huevos duros\n- 1 tomate perita\n- Limón, aceite de oliva, sal y pimienta""",
+        "pasos": """1. Mezclar tomate y huevo en trozos.\n2. Ahuecar paltas e integrar a la mezcla.\n3. Aderezar con limón, aceite, sal y pimienta."""
+    },
+    {
+        "titulo": "Ensalada de Chauchas y Huevo",
+        "ingredientes_clave": ["chaucha", "huevo"],
+        "celiaco": True, "vegano": False, "vegetariano": True, "sin_coccion": False, "sin_cubiertos": False,
+        "texto_ingredientes": """- 500 g Chauchas\n- 5 Huevos duros\n- Aceite de oliva, vinagre, sal""",
+        "pasos": """1. Hervir chauchas y pasar a agua fría para mantener color.\n2. Hervir huevos y cortar.\n3. Mezclar y aderezar a gusto."""
+    },
+    {
+        "titulo": "Ensalada completa saludable",
+        "ingredientes_clave": ["zanahoria", "repollo", "manzana", "queso crema", "limon", "tomate", "aceituna", "zucchini", "rucula", "pollo", "huevo"],
+        "celiaco": True, "vegano": False, "vegetariano": False, "sin_coccion": False, "sin_cubiertos": False,
+        "texto_ingredientes": """- Zanahoria, repollo morado/blanco, manzana verde\n- Queso crema, jugo de limón\n- Tomate, aceitunas, zucchini, rúcula\n- Pollo desmenuzado, huevos duros""",
+        "pasos": """1. Rallar y mezclar vegetales.\n2. Aderezar porciones con queso crema y limón.\n3. Servir en un gran plato integrado."""
+    },
+    {
+        "titulo": "Ensalada de pasta con pera y nueces",
+        "ingredientes_clave": ["fideo", "pera", "rucula", "nuez", "queso"],
+        "celiaco": False, "vegano": False, "vegetariano": True, "sin_coccion": False, "sin_cubiertos": False,
+        "texto_ingredientes": """- 320 gr pasta (fusilli)\n- 2 peras, 50 gr nueces, 100 gr rúcula\n- Queso rallado, aceite, sal, pimienta""",
+        "pasos": """1. Hervir y colar fideos. Dejar enfriar.\n2. Mezclar rúcula, peras en trozos, nueces y fideos.\n3. Aderezar y espolvorear queso."""
+    },
+    {
+        "titulo": "Ensalada mundialista de atún",
+        "ingredientes_clave": ["papa", "zanahoria", "atun", "huevo", "mayonesa"],
+        "celiaco": True, "vegano": False, "vegetariano": False, "sin_coccion": False, "sin_cubiertos": False,
+        "texto_ingredientes": """- 3 papas, 2 zanahorias\n- 2 latas de atún\n- 4 huevos duros\n- 4 cucharadas mayonesa""",
+        "pasos": """1. Hervir papas y zanahorias en cubos.\n2. Mezclar con atún y mayonesa.\n3. Decorar con huevo picado y enfriar."""
+    },
+    {
+        "titulo": "Mi ensalada favorita de palta",
+        "ingredientes_clave": ["tomate", "lechuga", "palta", "zapallito", "salsa de soja"],
+        "celiaco": False, "vegano": True, "vegetariano": True, "sin_coccion": True, "sin_cubiertos": False,
+        "texto_ingredientes": """- 4 Tomates, 1 Lechuga\n- 2 Paltas, 1 Zapallito Verde\n- Salsa de soja, aceite, sal""",
+        "pasos": """1. Cortar todas las verduras crudas y lavadas.\n2. Mezclar y condimentar con aceite y salsa de soja."""
+    },
+    {
+        "titulo": "Ensalada de Verdes y Pollo Rebozado",
+        "ingredientes_clave": ["lechuga", "tomate", "mostaza", "pollo", "queso", "mani", "manzana"],
+        "celiaco": False, "vegano": False, "vegetariano": False, "sin_coccion": False, "sin_cubiertos": False,
+        "texto_ingredientes": """- Lechuga hidropónica, tomates secos\n- Medallones de pollo rebozado\n- Queso azul, maní\n- Manzana verde, mostaza, aceite""",
+        "pasos": """1. Cocinar pollo y cortar.\n2. Preparar verdes, queso, tomates y maní.\n3. Aderezar con mostaza y aceite. Sumar manzana al final."""
+    },
+    {
+        "titulo": "Milanesas de berenjenas con ensalada",
+        "ingredientes_clave": ["berenjena", "huevo", "pan rallado", "lechuga", "tomate"],
+        "celiaco": False, "vegano": False, "vegetariano": True, "sin_coccion": False, "sin_cubiertos": False,
+        "texto_ingredientes": """- 3 berenjenas\n- 3 huevos\n- Pan rallado, condimentos\n- Lechuga y tomate para acompañar""",
+        "pasos": """1. Purgar berenjenas con sal y secar.\n2. Pasar por huevo condimentado y luego pan rallado.\n3. Hornear a 180° hasta dorar y servir con ensalada."""
+    },
+    {
+        "titulo": "Ensalada de manzana con zanahoria",
+        "ingredientes_clave": ["manzana", "zanahoria", "limon"],
+        "celiaco": True, "vegano": True, "vegetariano": True, "sin_coccion": True, "sin_cubiertos": False,
+        "texto_ingredientes": """- 2 manzanas rojas\n- 3 zanahorias\n- 1 limón, aceite""",
+        "pasos": """1. Pelar y cortar en tiras finas.\n2. Exprimir limón por encima para evitar oxidación y condimentar."""
+    },
+    {
+        "titulo": "Ensalada de Remolacha y Yogur",
+        "ingredientes_clave": ["remolacha", "yogurt", "ajo", "limon"],
+        "celiaco": True, "vegano": False, "vegetariano": True, "sin_coccion": False, "sin_cubiertos": False,
+        "texto_ingredientes": """- 2 Remolachas cocidas\n- 129 g Yogur natural\n- 1 diente Ajo, gotas de limón\n- Aceite, sal, pimienta""",
+        "pasos": """1. Cortar remolachas en rodajas.\n2. Mezclar yogur con ajo, limón y aceite.\n3. Bañar las remolachas y enfriar antes de servir."""
     }
 ]
 
 # ==========================================
 # 2. CATEGORIZACIÓN SEMÁNTICA
 # ==========================================
+# (Sin Emojis para que los selectores CSS enganchen perfecto)
 CATEGORIAS_MAP = {
     "Carnes y Proteínas": ["carne", "cerdo", "pollo", "milanesa", "chorizo", "panceta", "salchicha", "higado", "atun", "jamon"],
-    "Lácteos y Huevos": ["huevo", "yogurt", "queso", "crema de leche", "leche", "queso crema", "dulce de leche", "manteca", "ricota", "leche condensada"],
-    "Vegetales y Legumbres": ["papa", "cebolla", "aceituna", "ajo", "tomate", "zapallito", "zapallo", "zanahoria", "morron", "zucchini", "verdeo", "arveja", "choclo", "espinaca", "acelga", "remolacha", "garbanzo", "apio", "brocoli", "puerro", "pure de tomate"],
-    "Frutas y Frutos Secos": ["kiwi", "limon", "frutilla", "nuez", "manzana", "banana", "pera", "coco", "almendra"]
+    "Lácteos y Huevos": ["huevo", "yogurt", "queso", "crema de leche", "leche", "queso crema", "dulce de leche", "manteca", "ricota", "leche condensada", "mayonesa"],
+    "Vegetales y Legumbres": ["papa", "cebolla", "cebolla de verdeo", "verdeo", "aceituna", "ajo", "tomate", "zapallito", "zapallo", "calabaza", "zanahoria", "morron", "zucchini", "arveja", "choclo", "espinaca", "acelga", "remolacha", "garbanzo", "apio", "brocoli", "puerro", "pure de tomate", "champiñon", "hongo", "rucula", "chaucha", "repollo", "lechuga", "palta", "berenjena"],
+    "Frutas y Frutos Secos": ["kiwi", "limon", "frutilla", "nuez", "manzana", "banana", "pera", "coco", "almendra", "mani", "pasa de uva"]
 }
 
 ingredientes_unicos = set()
@@ -465,10 +678,9 @@ h1, h2, h3, h4 { color: #1E3A14 !important; }
 
 /* ==============================================================
    SECCIÓN 2: BANNERS HORIZONTALES POR CATEGORÍA CORREGIDOS
-   Apuntamos a la posición real del contenedor en la pantalla
    ============================================================== */
 
-/* 1. Banner para "Carnes y Proteínas" (Es el 5to elemento en la página) */
+/* 1. Banner para "Carnes y Proteínas" */
 div.element-container:nth-child(5) div[data-testid="stMultiSelect"] label {
     background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://preview.colorkit.co/color/ffa07a.png?static=true');
     background-size: cover;
@@ -481,7 +693,7 @@ div.element-container:nth-child(5) div[data-testid="stMultiSelect"] label {
     letter-spacing: 0.5px;
 }
 
-/* 2. Banner para "Lácteos y Huevos" (6to elemento) */
+/* 2. Banner para "Lácteos y Huevos" */
 div.element-container:nth-child(6) div[data-testid="stMultiSelect"] label {
     background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://caseformaking.com/cdn/shop/products/Egg-Yolk-Yellow-Square_1946x.jpg?v=1653565859');
     background-size: cover;
@@ -494,7 +706,7 @@ div.element-container:nth-child(6) div[data-testid="stMultiSelect"] label {
     letter-spacing: 0.5px;
 }
 
-/* 3. Banner para "Vegetales y Legumbres" (7mo elemento) */
+/* 3. Banner para "Vegetales y Legumbres" */
 div.element-container:nth-child(7) div[data-testid="stMultiSelect"] label {
     background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://preview.colorkit.co/color/556b2f.png?static=true');
     background-size: cover;
@@ -507,7 +719,7 @@ div.element-container:nth-child(7) div[data-testid="stMultiSelect"] label {
     letter-spacing: 0.5px;
 }
 
-/* 4. Banner para "Frutas y Frutos Secos" (8vo elemento) */
+/* 4. Banner para "Frutas y Frutos Secos" */
 div.element-container:nth-child(8) div[data-testid="stMultiSelect"] label {
     background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://i.pinimg.com/736x/d3/cb/b4/d3cbb4fec5527f09f18abd6b3ec44e14.jpg');
     background-size: cover;
@@ -520,7 +732,7 @@ div.element-container:nth-child(8) div[data-testid="stMultiSelect"] label {
     letter-spacing: 0.5px;
 }
 
-/* 5. Banner para "Despensa y Otros" (9no elemento) */
+/* 5. Banner para "Despensa y Otros" */
 div.element-container:nth-child(9) div[data-testid="stMultiSelect"] label {
     background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://www.colorhexa.com/b59b7c.png');
     background-size: cover;
@@ -573,9 +785,10 @@ div[data-testid="stCheckbox"] label {
     color: #2F3324 !important;
     font-weight: 600;
 }
+/* Recuadro de los Checkboxes activos (Tick Color a #ffa07a) */
 div[data-baseweb="checkbox"] input:checked + div {
-    background-color: #4F6D23 !important;
-    border-color: #1E3A14 !important;
+    background-color: #ffa07a !important;
+    border-color: #ffa07a !important;
 }
 div[data-baseweb="checkbox"] input:checked + div svg path { fill: #FFFFFF !important; }
 
@@ -679,12 +892,10 @@ div[data-testid="stExpanderDetails"] strong {
 </style>
 """, unsafe_allow_html=True)
 
-
 # ==========================================
 # 5. RENDERIZADO DE LA INTERFAZ (UI)
 # ==========================================
 
-# TÍTULO PRINCIPAL CON IMAGEN 
 st.markdown("""
 <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 10px;">
     <img src="https://cdn-icons-png.flaticon.com/512/1830/1830839.png" alt="Icono de cocina" width="60">
