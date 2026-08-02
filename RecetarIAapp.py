@@ -378,10 +378,10 @@ RECETAS = [
 
 # 2. SISTEMA DE CATEGORIZACIÓN SEMÁNTICA (Automático)
 CATEGORIAS_MAP = {
-    "Carnes y Proteínas": ["carne", "cerdo", "pollo", "milanesa", "chorizo", "panceta", "salchicha", "higado", "atun", "jamon"],
-    "Lácteos y Huevos": ["huevo", "yogurt", "queso", "crema de leche", "leche", "queso crema", "dulce de leche", "manteca", "ricota", "leche condensada"],
-    "Vegetales y Legumbres": ["papa", "cebolla", "aceituna", "ajo", "tomate", "zapallito", "zapallo", "zanahoria", "morron", "zucchini", "verdeo", "arveja", "choclo", "espinaca", "acelga", "remolacha", "garbanzo", "apio", "brocoli", "puerro", "pure de tomate"],
-    "Frutas y Frutos Secos": ["kiwi", "limon", "frutilla", "nuez", "manzana", "banana", "pera", "coco", "almendra"]
+    "🥩 Carnes y Proteínas": ["carne", "cerdo", "pollo", "milanesa", "chorizo", "panceta", "salchicha", "higado", "atun", "jamon"],
+    "🧀 Lácteos y Huevos": ["huevo", "yogurt", "queso", "crema de leche", "leche", "queso crema", "dulce de leche", "manteca", "ricota", "leche condensada"],
+    "🥦 Vegetales y Legumbres": ["papa", "cebolla", "aceituna", "ajo", "tomate", "zapallito", "zapallo", "zanahoria", "morron", "zucchini", "verdeo", "arveja", "choclo", "espinaca", "acelga", "remolacha", "garbanzo", "apio", "brocoli", "puerro", "pure de tomate"],
+    "🍎 Frutas y Frutos Secos": ["kiwi", "limon", "frutilla", "nuez", "manzana", "banana", "pera", "coco", "almendra"]
 }
 
 ingredientes_unicos = set()
@@ -390,7 +390,7 @@ for receta in RECETAS:
         ingredientes_unicos.add(ing)
 
 INGREDIENTES_POR_CATEGORIA = {cat: [] for cat in CATEGORIAS_MAP.keys()}
-INGREDIENTES_POR_CATEGORIA["Despensa y Otros"] = []
+INGREDIENTES_POR_CATEGORIA["🌾 Despensa y Otros"] = []
 
 for ing in sorted(list(ingredientes_unicos)):
     encontrado = False
@@ -400,7 +400,7 @@ for ing in sorted(list(ingredientes_unicos)):
             encontrado = True
             break
     if not encontrado:
-        INGREDIENTES_POR_CATEGORIA["Despensa y Otros"].append(ing)
+        INGREDIENTES_POR_CATEGORIA["🌾 Despensa y Otros"].append(ing)
 
 
 # 3. LÓGICA DE BÚSQUEDA Y FILTROS
@@ -438,12 +438,26 @@ st.set_page_config(page_title="¿Qué cocino hoy?", layout="centered")
 
 st.markdown("""
 <style>
+/* TIPOGRAFÍA GENERAL DINÁMICA (Sistemas modernos) */
 * {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
 }
 
+/* IMAGEN DE FONDO */
 .stApp {
-    background-color: #FDFBF5;
+    background-image: url("https://images.unsplash.com/photo-1495195134817-a169d0dc3273?q=80&w=2000&auto=format&fit=crop");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-color: #FDFBF5; /* Color de respaldo */
+}
+
+/* Fondito semitransparente para que se lea el texto sobre la imagen */
+.stMarkdown {
+    background-color: rgba(253, 251, 245, 0.85);
+    padding: 10px;
+    border-radius: 8px;
 }
 
 h1, h2, h3, h4 {
@@ -545,16 +559,21 @@ div[data-testid="column"]:nth-of-type(2) div.stButton > button:hover {
     background-color: #1E3A14 !important;
 }
 
-/* BOTÓN DESPLEGABLE DE RECETAS */
+/* BOTÓN DESPLEGABLE DE RECETAS (Adiós arrow_right) */
 [data-testid="stExpander"] summary {
     border: 2px solid #4F6D23 !important;
     border-radius: 6px !important;
     background-color: #FDFBF5 !important;
 }
+/* Solo apuntamos al texto (p) y al ícono (svg), sin usar el asterisco (*) */
 [data-testid="stExpander"] summary p {
-    color: #1E3A14 !important; 
+    color: #1E3A14 !important;
     font-weight: bold !important;
 }
+[data-testid="stExpander"] summary svg {
+    color: #1E3A14 !important;
+}
+
 
 /* CAJA DE TEXTO RECETAS */
 div[data-testid="stExpanderDetails"] {
@@ -619,7 +638,7 @@ div[data-testid="stExpanderDetails"] strong {
 </style>
 """, unsafe_allow_html=True)
 
-st.title("¿Qué cocino hoy?")
+st.title("🍳 ¿Qué cocino hoy?")
 st.markdown("#### Recetas con lo que tenés a mano.")
 st.write("Seleccioná los ingredientes que tengas disponibles.")
 
@@ -636,17 +655,17 @@ for categoria, opciones_ingredientes in INGREDIENTES_POR_CATEGORIA.items():
         ingredientes_seleccionados_totales.extend(seleccion)
 
 st.write("---")
-st.subheader("[+] Filtros especiales")
+st.subheader("🎯 Filtros especiales")
 
 col_f1, col_f2, col_f3 = st.columns(3)
 with col_f1:
-    f_celiaco = st.checkbox("[ * ] Celíaco (Sin TACC)")
-    f_vegano = st.checkbox("[ v ] Vegano")
+    f_celiaco = st.checkbox("🌾 Celíaco (Sin TACC)")
+    f_vegano = st.checkbox("🌱 Vegano")
 with col_f2:
-    f_vegetariano = st.checkbox("[ o ] Vegetariano")
-    f_sin_coccion = st.checkbox("[ - ] Sin cocción")
+    f_vegetariano = st.checkbox("🥦 Vegetariano")
+    f_sin_coccion = st.checkbox("❄️ Sin cocción")
 with col_f3:
-    f_sin_cubiertos = st.checkbox("[ # ] Sin cubiertos (Finger food)")
+    f_sin_cubiertos = st.checkbox("🌮 Sin cubiertos (Finger food)")
 
 filtros_dict = {
     "celiaco": f_celiaco,
@@ -663,7 +682,7 @@ buscar_pulsado = False
 azar_pulsado = False
 
 with col_btn1:
-    if st.button("[ > ] Buscar Recetas"):
+    if st.button("🔍 Buscar Recetas"):
         buscar_pulsado = True
 with col_btn2:
     if st.button("🎲 Elegir una al azar"):
@@ -683,7 +702,7 @@ if buscar_pulsado or azar_pulsado:
                 exactas, casi_listas = [], []
         
         if exactas:
-            st.success("[ OK ] ¡Tenés todo para preparar esto!" if not azar_pulsado else "[ OK ] La suerte eligió esta receta ideal para vos.")
+            st.success("🍽️ ¡Tenés todo para preparar esto!" if not azar_pulsado else "🎲 La suerte eligió esta receta ideal para vos.")
             for r in exactas:
                 st.markdown(f"<div class='titulo-exacta'>{r['titulo']}</div>", unsafe_allow_html=True)
                 
@@ -695,12 +714,12 @@ if buscar_pulsado or azar_pulsado:
                 st.write("") 
                 
         if casi_listas:
-            st.info("[ i ] Te faltan hasta 2 ingredientes para estas recetas:" if not azar_pulsado else "[ i ] Salió esta opción. Te falta muy poquito para hacerla:")
+            st.info("🛒 Te faltan hasta 2 ingredientes para estas recetas:" if not azar_pulsado else "🎲 Salió esta opción. Te falta muy poquito para hacerla:")
             for r in casi_listas:
                 st.markdown(f"<div class='titulo-parcial'>{r['titulo']}</div>", unsafe_allow_html=True)
                 
                 faltantes_str = ", ".join(r["ingredientes_faltantes"])
-                st.markdown(f"<div class='alerta-faltantes'><strong>[ ! ] Atención - Te falta/n:</strong> {faltantes_str}</div>", unsafe_allow_html=True)
+                st.markdown(f"<div class='alerta-faltantes'><strong>⚠️ Atención - Te falta/n:</strong> {faltantes_str}</div>", unsafe_allow_html=True)
                 
                 with st.expander("Ver receta"):
                     st.markdown("**Ingredientes:**")
@@ -710,7 +729,7 @@ if buscar_pulsado or azar_pulsado:
                 st.write("") 
                 
         if not exactas and not casi_listas:
-            st.warning("[ x ] No encontramos recetas que coincidan con lo que elegiste y tus filtros. ¡Probá cambiando las opciones!")
+            st.warning("⚠️ No encontramos recetas que coincidan con lo que elegiste y tus filtros. ¡Probá cambiando las opciones!")
             
     else:
-        st.error("[ x ] Por favor, seleccioná al menos un ingrediente de cualquier categoría.")
+        st.error("⚠️ Por favor, seleccioná al menos un ingrediente de cualquier categoría.")
