@@ -445,21 +445,22 @@ st.markdown("""
 
 /* IMAGEN DE FONDO */
 .stApp {
+    /* Reemplazá este link por el de tu imagen */
     background-image: url("https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgvh2HGg8fIp_MgI0uSjKsng9aJRjUmXU9VNM6CtHZ1BlVWY4-AQ_F2rGTuhBtzdzs9ooxh2H923vh-k7abOU4unxEDSQyc1gLDEjEi18HpFi6FWz81B7XEOxw-0KNp63hYmQj60iGIu5M/s1600/Interiorrojo_Naturalezamuertaenuncua%5B1%5D.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    
+    /* Mantiene la imagen más pequeña (ajustá el 150px al tamaño que prefieras) */
+    background-size: 150px auto; 
+    
+    /* La repite verticalmente ('repeat-y') y la ubica en los extremos izquierdo y derecho */
+    background-repeat: repeat-y;
+    background-position: left top, right top;
+    
+    /* Fija el fondo para que no se mueva al hacer scroll */
     background-attachment: fixed;
-    background-color: #FDFBF5; /* Color de respaldo */
+    
+    /* Color de respaldo para el centro de la pantalla */
+    background-color: #FDFBF5; 
 }
-
-/* Fondito semitransparente para que se lea el texto sobre la imagen */
-.stMarkdown {
-    background-color: rgba(253, 251, 245, 0.85);
-    padding: 10px;
-    border-radius: 8px;
-}
-
 h1, h2, h3, h4 {
     color: #1E3A14 !important;
 }
