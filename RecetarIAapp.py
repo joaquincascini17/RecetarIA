@@ -786,16 +786,9 @@ div[data-testid="stCheckbox"] label {
     font-weight: 600;
 }
 
-/* Cambia el fondo del cuadrito cuando está tildado a #ffa07a */
-div[data-testid="stCheckbox"] input:checked + div {
-    background-color: #ffa07a !important;
-    border-color: #ffa07a !important;
-}
-
-/* Asegura que el tilde (icono) interno se vea blanco */
-div[data-testid="stCheckbox"] input:checked + div svg {
-    fill: #FFFFFF !important;
-    color: #FFFFFF !important;
+/* Forzar el color de selección con accent-color */
+div[data-testid="stCheckbox"] input[type="checkbox"] {
+    accent-color: #ffa07a !important;
 }
 
 /* ==============================================================
