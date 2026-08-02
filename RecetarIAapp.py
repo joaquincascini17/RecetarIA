@@ -779,18 +779,24 @@ span[data-baseweb="tag"] span {
 span[data-baseweb="tag"] svg { fill: #1E3A14 !important; }
 
 /* ==============================================================
-   SECCIÓN 4: CHECKBOXES (FILTROS)
+   SECCIÓN 4: CHECKBOXES (FILTROS ESPECIALES)
    ============================================================== */
 div[data-testid="stCheckbox"] label {
     color: #2F3324 !important;
     font-weight: 600;
 }
-/* Recuadro de los Checkboxes activos (Tick Color a #ffa07a) */
-div[data-baseweb="checkbox"] input:checked + div {
+
+/* Cambia el fondo del cuadrito cuando está tildado a #ffa07a */
+div[data-testid="stCheckbox"] input:checked + div {
     background-color: #ffa07a !important;
     border-color: #ffa07a !important;
 }
-div[data-baseweb="checkbox"] input:checked + div svg path { fill: #FFFFFF !important; }
+
+/* Asegura que el tilde (icono) interno se vea blanco */
+div[data-testid="stCheckbox"] input:checked + div svg {
+    fill: #FFFFFF !important;
+    color: #FFFFFF !important;
+}
 
 /* ==============================================================
    SECCIÓN 5: BOTONES
