@@ -781,23 +781,32 @@ span[data-baseweb="tag"] svg { fill: #1E3A14 !important; }
 /* ==============================================================
    SECCIÓN 4: CHECKBOXES (FILTROS ESPECIALES)
    ============================================================== */
-div[data-testid="stCheckbox"] label {
+div[data-testid="stCheckbox"] label,
+div[data-testid="stCheckbox"] label p {
     color: #2F3324 !important;
-    font-weight: 600;
+    font-weight: 600 !important;
 }
 
-/* Forzar el color de fondo del cuadro cuando está activo */
-div[data-testid="stCheckbox"] [data-baseweb="checkbox"] input:checked + div {
+/* Truco infalible: Modificar la variable CSS nativa de Streamlit para estos bloques */
+div[data-testid="stCheckbox"] {
+    --primary-color: #ffa07a !important;
+}
+
+/* Selector de ultra-alta especificidad para forzar el fondo de la cajita */
+div[data-testid="stCheckbox"] label[data-baseweb="checkbox"] input:checked + div,
+div[data-testid="stCheckbox"] label[data-baseweb="checkbox"] input[aria-checked="true"] + div {
     background-color: #ffa07a !important;
     border-color: #ffa07a !important;
 }
 
-/* Forzar el color del check (tilde) interno para que resalte */
-div[data-testid="stCheckbox"] [data-baseweb="checkbox"] input:checked + div svg {
+/* Asegurar que el icono (el tick) se mantenga blanco limpio */
+div[data-testid="stCheckbox"] label[data-baseweb="checkbox"] input:checked + div svg,
+div[data-testid="stCheckbox"] label[data-baseweb="checkbox"] input:checked + div svg path,
+div[data-testid="stCheckbox"] label[data-baseweb="checkbox"] input[aria-checked="true"] + div svg {
     fill: #FFFFFF !important;
     stroke: #FFFFFF !important;
+    color: #FFFFFF !important;
 }
-
 /* ==============================================================
    SECCIÓN 5: BOTONES
    ============================================================== */
