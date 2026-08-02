@@ -841,17 +841,33 @@ div[data-testid="column"]:nth-of-type(2) div.stButton > button:hover {
     border-radius: 6px !important;
     background-color: #FDFBF5 !important;
 }
-[data-testid="stExpander"] summary p {
-    color: #1E3A14 !important;
-    font-weight: bold !important;
+
+/* TRUCO DEFINITIVO PARA BORRAR TEXTOS DE ICONOS ROTOS (_arrow_right, etc.) 
+   Volvemos invisible todo el contenedor y sus divs/spans internos */
+[data-testid="stExpander"] summary,
+[data-testid="stExpander"] summary div,
+[data-testid="stExpander"] summary span {
+    font-size: 0px !important;
+    color: transparent !important;
 }
 
-/* OCULTAR LA FLECHA POR DEFECTO O EL TEXTO "arrow_down" */
+/* Le devolvemos el tamaño y color EXCLUSIVAMENTE al título de la receta */
+[data-testid="stExpander"] summary p {
+    font-size: 1.15rem !important;
+    color: #1E3A14 !important;
+    font-weight: bold !important;
+    margin: 0 !important;
+    padding: 5px 0 !important;
+}
+
+/* Ocultamos cualquier etiqueta de icono por las dudas */
 [data-testid="stExpander"] summary svg,
-[data-testid="stExpander"] summary div[data-testid="stIconMaterial"] {
+[data-testid="stExpander"] summary [data-testid="stIconMaterial"],
+[data-testid="stExpander"] summary .material-symbols-rounded {
     display: none !important;
 }
 
+/* --- ESTILOS DEL CONTENIDO (La receta en sí) --- */
 div[data-testid="stExpanderDetails"] {
     background-color: #FFFFFF !important; 
     border: 2px solid #99A12D !important;
