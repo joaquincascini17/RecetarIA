@@ -640,7 +640,7 @@ div[data-testid="stExpanderDetails"] strong {
 """, unsafe_allow_html=True)
 
 st.title("🍳 ¿Qué cocino hoy?")
-st.markdown("#### Recetas con lo que tenés a mano.")
+sst.markdown("<p style='font-family: \"Georgia\", serif; font-size: 1.8rem; color: #7a2d27;'>Recetas con lo que tenés a mano.</p>", unsafe_allow_html=True)
 st.write("Seleccioná los ingredientes que tengas disponibles.")
 
 # CAMPOS DE SELECCIÓN POR CATEGORÍA
