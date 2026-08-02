@@ -845,7 +845,12 @@ div[data-testid="column"]:nth-of-type(2) div.stButton > button:hover {
     color: #1E3A14 !important;
     font-weight: bold !important;
 }
-[data-testid="stExpander"] summary svg { color: #1E3A14 !important; }
+
+/* OCULTAR LA FLECHA POR DEFECTO O EL TEXTO "arrow_down" */
+[data-testid="stExpander"] summary svg,
+[data-testid="stExpander"] summary div[data-testid="stIconMaterial"] {
+    display: none !important;
+}
 
 div[data-testid="stExpanderDetails"] {
     background-color: #FFFFFF !important; 
