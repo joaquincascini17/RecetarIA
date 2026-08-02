@@ -470,7 +470,7 @@ h1, h2, h3, h4 { color: #1E3A14 !important; }
 
 /* 1. Banner para "Carnes y Proteínas" */
 div[data-testid="stMultiSelect"]:nth-of-type(1) label {
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?auto=format&fit=crop&w=800&q=80');
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://caseformaking.com/cdn/shop/products/Egg-Yolk-Yellow-Square_1946x.jpg?v=1653565859');
     background-size: cover;
     background-position: center;
     color: #FFFFFF !important;
@@ -483,7 +483,7 @@ div[data-testid="stMultiSelect"]:nth-of-type(1) label {
 
 /* 2. Banner para "Lácteos y Huevos" */
 div[data-testid="stMultiSelect"]:nth-of-type(2) label {
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1628088062854-d1870b4553da?auto=format&fit=crop&w=800&q=80');
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://www.colorhexa.com/74c476.png');
     background-size: cover;
     background-position: center;
     color: #FFFFFF !important;
@@ -496,7 +496,7 @@ div[data-testid="stMultiSelect"]:nth-of-type(2) label {
 
 /* 3. Banner para "Vegetales y Legumbres" */
 div[data-testid="stMultiSelect"]:nth-of-type(3) label {
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=800&q=80');
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://preview.colorkit.co/color/556b2f.png?static=true');
     background-size: cover;
     background-position: center;
     color: #FFFFFF !important;
@@ -509,7 +509,7 @@ div[data-testid="stMultiSelect"]:nth-of-type(3) label {
 
 /* 4. Banner para "Frutas y Frutos Secos" */
 div[data-testid="stMultiSelect"]:nth-of-type(4) label {
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1619566636858-adf3ef46400b?auto=format&fit=crop&w=800&q=80');
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://i.pinimg.com/736x/d3/cb/b4/d3cbb4fec5527f09f18abd6b3ec44e14.jpg');
     background-size: cover;
     background-position: center;
     color: #FFFFFF !important;
@@ -522,7 +522,7 @@ div[data-testid="stMultiSelect"]:nth-of-type(4) label {
 
 /* 5. Banner para "Despensa y Otros" */
 div[data-testid="stMultiSelect"]:nth-of-type(5) label {
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&w=800&q=80');
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://www.colorhexa.com/b59b7c.png');
     background-size: cover;
     background-position: center;
     color: #FFFFFF !important;
