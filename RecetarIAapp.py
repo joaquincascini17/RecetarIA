@@ -445,22 +445,20 @@ st.markdown("""
 
 /* IMAGEN DE FONDO */
 .stApp {
-    /* 1. Definís las dos imágenes (primero la de la izquierda, después la de la derecha) */
-    background-image: url("https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgvh2HGg8fIp_MgI0uSjKsng9aJRjUmXU9VNM6CtHZ1BlVWY4-AQ_F2rGTuhBtzdzs9ooxh2H923vh-k7abOU4unxEDSQyc1gLDEjEi18HpFi6FWz81B7XEOxw-0KNp63hYmQj60iGIu5M/s1600/Interiorrojo_Naturalezamuertaenuncua%5B1%5D.jpg"), url("https://galeriavermeer.com/wp-content/uploads/2021/03/MENGHI.NATURALEZA-MUERTA.OLEO-SOBRE-HARDBOARD.067X050-350x473.jpg'');
+    /* Reemplazá este link por el de tu imagen */
+    background-image: url("https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgvh2HGg8fIp_MgI0uSjKsng9aJRjUmXU9VNM6CtHZ1BlVWY4-AQ_F2rGTuhBtzdzs9ooxh2H923vh-k7abOU4unxEDSQyc1gLDEjEi18HpFi6FWz81B7XEOxw-0KNp63hYmQj60iGIu5M/s1600/Interiorrojo_Naturalezamuertaenuncua%5B1%5D.jpg");
     
-    /* 2. El tamaño de cada una (ancho y alto automático) */
-    background-size: 150px auto, 150px auto; 
+    /* Mantiene la imagen más pequeña (ajustá el 150px al tamaño que prefieras) */
+    background-size: 150px auto; 
     
-    /* 3. Se repiten verticalmente en ambos lados ('repeat-y') */
-    background-repeat: repeat-y, repeat-y;
-    
-    /* 4. Posición: la primera a la izquierda, la segunda a la derecha */
+    /* La repite verticalmente ('repeat-y') y la ubica en los extremos izquierdo y derecho */
+    background-repeat: repeat-y;
     background-position: left top, right top;
     
-    /* 5. Fija el fondo al hacer scroll */
-    background-attachment: fixed, fixed;
+    /* Fija el fondo para que no se mueva al hacer scroll */
+    background-attachment: fixed;
     
-    /* 6. Color de respaldo para el centro */
+    /* Color de respaldo para el centro de la pantalla */
     background-color: #FDFBF5; 
 }
 h1, h2, h3, h4 {
