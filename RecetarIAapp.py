@@ -786,9 +786,16 @@ div[data-testid="stCheckbox"] label {
     font-weight: 600;
 }
 
-/* Forzar el color de selección con accent-color */
-div[data-testid="stCheckbox"] input[type="checkbox"] {
-    accent-color: #ffa07a !important;
+/* Forzar el color de fondo del cuadro cuando está activo */
+div[data-testid="stCheckbox"] [data-baseweb="checkbox"] input:checked + div {
+    background-color: #ffa07a !important;
+    border-color: #ffa07a !important;
+}
+
+/* Forzar el color del check (tilde) interno para que resalte */
+div[data-testid="stCheckbox"] [data-baseweb="checkbox"] input:checked + div svg {
+    fill: #FFFFFF !important;
+    stroke: #FFFFFF !important;
 }
 
 /* ==============================================================
