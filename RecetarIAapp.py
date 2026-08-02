@@ -993,7 +993,7 @@ if buscar_pulsado or azar_pulsado:
             for r in exactas:
                 st.markdown(f"<div class='titulo-exacta'>{r['titulo']}</div>", unsafe_allow_html=True)
                 
-                with st.expander("Ver receta"):
+                with st.expander("🥘 Ver receta paso a paso 📖"):
                     st.markdown("**Ingredientes:**")
                     st.text(r["texto_ingredientes"])
                     st.markdown("**Paso a paso:**")
