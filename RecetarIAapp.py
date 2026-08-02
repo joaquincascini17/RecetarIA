@@ -377,11 +377,12 @@ RECETAS = [
 ]
 
 # 2. SISTEMA DE CATEGORIZACIÓN SEMÁNTICA (Automático)
+# Emojis eliminados de las claves para que los filtros se vean mejor
 CATEGORIAS_MAP = {
-    "🥩 Carnes y Proteínas": ["carne", "cerdo", "pollo", "milanesa", "chorizo", "panceta", "salchicha", "higado", "atun", "jamon"],
-    "🧀 Lácteos y Huevos": ["huevo", "yogurt", "queso", "crema de leche", "leche", "queso crema", "dulce de leche", "manteca", "ricota", "leche condensada"],
-    "🥦 Vegetales y Legumbres": ["papa", "cebolla", "aceituna", "ajo", "tomate", "zapallito", "zapallo", "zanahoria", "morron", "zucchini", "verdeo", "arveja", "choclo", "espinaca", "acelga", "remolacha", "garbanzo", "apio", "brocoli", "puerro", "pure de tomate"],
-    "🍎 Frutas y Frutos Secos": ["kiwi", "limon", "frutilla", "nuez", "manzana", "banana", "pera", "coco", "almendra"]
+    "Carnes y Proteínas": ["carne", "cerdo", "pollo", "milanesa", "chorizo", "panceta", "salchicha", "higado", "atun", "jamon"],
+    "Lácteos y Huevos": ["huevo", "yogurt", "queso", "crema de leche", "leche", "queso crema", "dulce de leche", "manteca", "ricota", "leche condensada"],
+    "Vegetales y Legumbres": ["papa", "cebolla", "aceituna", "ajo", "tomate", "zapallito", "zapallo", "zanahoria", "morron", "zucchini", "verdeo", "arveja", "choclo", "espinaca", "acelga", "remolacha", "garbanzo", "apio", "brocoli", "puerro", "pure de tomate"],
+    "Frutas y Frutos Secos": ["kiwi", "limon", "frutilla", "nuez", "manzana", "banana", "pera", "coco", "almendra"]
 }
 
 ingredientes_unicos = set()
@@ -390,7 +391,7 @@ for receta in RECETAS:
         ingredientes_unicos.add(ing)
 
 INGREDIENTES_POR_CATEGORIA = {cat: [] for cat in CATEGORIAS_MAP.keys()}
-INGREDIENTES_POR_CATEGORIA["🌾 Despensa y Otros"] = []
+INGREDIENTES_POR_CATEGORIA["Despensa y Otros"] = []
 
 for ing in sorted(list(ingredientes_unicos)):
     encontrado = False
@@ -400,7 +401,7 @@ for ing in sorted(list(ingredientes_unicos)):
             encontrado = True
             break
     if not encontrado:
-        INGREDIENTES_POR_CATEGORIA["🌾 Despensa y Otros"].append(ing)
+        INGREDIENTES_POR_CATEGORIA["Despensa y Otros"].append(ing)
 
 
 # 3. LÓGICA DE BÚSQUEDA Y FILTROS
@@ -517,7 +518,7 @@ li[data-baseweb="option"] {
 
 li[data-baseweb="option"]:hover, li[data-baseweb="option"][aria-selected="true"] {
     background-color: #99A12D !important; 
-    color: #FFFFFF !important;             
+    color: #FFFFFF !important;               
 }
 
 span[data-baseweb="tag"] {
@@ -639,7 +640,14 @@ div[data-testid="stExpanderDetails"] strong {
 </style>
 """, unsafe_allow_html=True)
 
-st.title("🍳 ¿Qué cocino hoy?")
+# TÍTULO PRINCIPAL CON IMAGEN (Acá podés cambiar el "src" por el link de tu propia imagen)
+st.markdown("""
+<div style="display: flex; align-items: center; gap: 15px; margin-bottom: 10px;">
+    <img src="https://cdn-icons-png.flaticon.com/512/1830/1830839.png" alt="Icono de cocina" width="60">
+    <h1 style="margin: 0;">¿Qué cocino hoy?</h1>
+</div>
+""", unsafe_allow_html=True)
+
 st.markdown("<p style='font-family: \"Georgia\", serif; font-size: 1.8rem; color: #7a2d27;'>Recetas con lo que tenés a mano.</p>", unsafe_allow_html=True)
 st.write("Seleccioná los ingredientes que tengas disponibles.")
 
@@ -656,17 +664,17 @@ for categoria, opciones_ingredientes in INGREDIENTES_POR_CATEGORIA.items():
         ingredientes_seleccionados_totales.extend(seleccion)
 
 st.write("---")
-st.subheader("🎯 Filtros especiales")
+st.subheader("Filtros especiales")
 
 col_f1, col_f2, col_f3 = st.columns(3)
 with col_f1:
-    f_celiaco = st.checkbox("🌾 Celíaco (Sin TACC)")
-    f_vegano = st.checkbox("🌱 Vegano")
+    f_celiaco = st.checkbox("Celíaco (Sin TACC)")
+    f_vegano = st.checkbox("Vegano")
 with col_f2:
-    f_vegetariano = st.checkbox("🥦 Vegetariano")
-    f_sin_coccion = st.checkbox("❄️ Sin cocción")
+    f_vegetariano = st.checkbox("Vegetariano")
+    f_sin_coccion = st.checkbox("Sin cocción")
 with col_f3:
-    f_sin_cubiertos = st.checkbox("🌮 Sin cubiertos (Finger food)")
+    f_sin_cubiertos = st.checkbox("Sin cubiertos (Finger food)")
 
 filtros_dict = {
     "celiaco": f_celiaco,
@@ -683,10 +691,10 @@ buscar_pulsado = False
 azar_pulsado = False
 
 with col_btn1:
-    if st.button("🔍 Buscar Recetas"):
+    if st.button("Buscar Recetas"):
         buscar_pulsado = True
 with col_btn2:
-    if st.button("🎲 Elegir una al azar"):
+    if st.button("Elegir una al azar"):
         azar_pulsado = True
 
 if buscar_pulsado or azar_pulsado:
@@ -703,7 +711,7 @@ if buscar_pulsado or azar_pulsado:
                 exactas, casi_listas = [], []
         
         if exactas:
-            st.success("🍽️ ¡Tenés todo para preparar esto!" if not azar_pulsado else "🎲 La suerte eligió esta receta ideal para vos.")
+            st.success("¡Tenés todo para preparar esto!" if not azar_pulsado else "La suerte eligió esta receta ideal para vos.")
             for r in exactas:
                 st.markdown(f"<div class='titulo-exacta'>{r['titulo']}</div>", unsafe_allow_html=True)
                 
@@ -715,12 +723,12 @@ if buscar_pulsado or azar_pulsado:
                 st.write("") 
                 
         if casi_listas:
-            st.info("🛒 Te faltan hasta 2 ingredientes para estas recetas:" if not azar_pulsado else "🎲 Salió esta opción. Te falta muy poquito para hacerla:")
+            st.info("Te faltan hasta 2 ingredientes para estas recetas:" if not azar_pulsado else "Salió esta opción. Te falta muy poquito para hacerla:")
             for r in casi_listas:
                 st.markdown(f"<div class='titulo-parcial'>{r['titulo']}</div>", unsafe_allow_html=True)
                 
                 faltantes_str = ", ".join(r["ingredientes_faltantes"])
-                st.markdown(f"<div class='alerta-faltantes'><strong>⚠️ Atención - Te falta/n:</strong> {faltantes_str}</div>", unsafe_allow_html=True)
+                st.markdown(f"<div class='alerta-faltantes'><strong>Atención - Te falta/n:</strong> {faltantes_str}</div>", unsafe_allow_html=True)
                 
                 with st.expander("Ver receta"):
                     st.markdown("**Ingredientes:**")
@@ -730,7 +738,7 @@ if buscar_pulsado or azar_pulsado:
                 st.write("") 
                 
         if not exactas and not casi_listas:
-            st.warning("⚠️ No encontramos recetas que coincidan con lo que elegiste y tus filtros. ¡Probá cambiando las opciones!")
+            st.warning("No encontramos recetas que coincidan con lo que elegiste y tus filtros. ¡Probá cambiando las opciones!")
             
     else:
-        st.error("⚠️ Por favor, seleccioná al menos un ingrediente de cualquier categoría.")
+        st.error("Por favor, seleccioná al menos un ingrediente de cualquier categoría.")
