@@ -470,7 +470,7 @@ h1, h2, h3, h4 { color: #1E3A14 !important; }
 
 /* 1. Banner para "Carnes y Proteínas" */
 div[data-testid="stMultiSelect"]:nth-of-type(1) label {
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://caseformaking.com/cdn/shop/products/Egg-Yolk-Yellow-Square_1946x.jpg?v=1653565859');
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://preview.colorkit.co/color/ffa07a.png?static=true');
     background-size: cover;
     background-position: center;
     color: #FFFFFF !important;
@@ -483,7 +483,7 @@ div[data-testid="stMultiSelect"]:nth-of-type(1) label {
 
 /* 2. Banner para "Lácteos y Huevos" */
 div[data-testid="stMultiSelect"]:nth-of-type(2) label {
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://www.colorhexa.com/74c476.png');
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://caseformaking.com/cdn/shop/products/Egg-Yolk-Yellow-Square_1946x.jpg?v=1653565859');
     background-size: cover;
     background-position: center;
     color: #FFFFFF !important;
